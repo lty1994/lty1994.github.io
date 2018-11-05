@@ -1700,11 +1700,6 @@ pre .javascript .function {
   display: inline-block;
   margin: 0.8em 2em 0 2em;
 }
-#QR > div:hover p {
-  animation: roll 0.1s infinite linear;
-  -webkit-animation: roll 0.1s infinite linear;
-  -moz-animation: roll 0.1s infinite linear;
-}
 @-moz-keyframes roll {
   from {
     -webkit-transform: rotateZ(30deg);
@@ -1981,7 +1976,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff47d1;
+  background: #ffff4f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2677,7 +2672,7 @@ ul.breadcrumb li+li:last-child {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: #fff;
+  background: rgba(255,255,255,0.6) none repeat scroll !important;
   box-shadow: initial;
   border-radius: initial;
 }
@@ -2733,17 +2728,15 @@ ul.breadcrumb li+li:last-child {
   box-sizing: border-box;
   padding: 40px;
   width: calc(100% - 252px);
-  background: #fff;
+  background: rgba(255,255,255,0.6) none repeat scroll !important;
   min-height: 700px;
   box-shadow: initial;
-  border-radius: initial;
+  border-radius: 10px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .content-wrap {
-    width: 100%;
-    padding: 20px;
-    border-radius: initial;
-  }
+.content-wrap +tablet() {
+  width: 100%;
+  padding: 20px;
+  border-radius: initial;
 }
 @media (max-width: 767px) {
   .content-wrap {
@@ -2758,7 +2751,7 @@ ul.breadcrumb li+li:last-child {
   float: left;
   margin-top: 300px;
   width: 240px;
-  background: #f5f7f9;
+  background: rgba(255,255,255,0.6) none repeat scroll !important;
   box-shadow: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
