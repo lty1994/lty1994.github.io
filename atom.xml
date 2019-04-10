@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liutaiyu.cn/"/>
-  <updated>2019-04-10T07:16:42.291Z</updated>
+  <updated>2019-04-10T07:58:20.242Z</updated>
   <id>http://liutaiyu.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客相关问题</title>
+    <link href="http://liutaiyu.cn/2019/04/10/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+    <id>http://liutaiyu.cn/2019/04/10/博客相关问题/</id>
+    <published>2019-04-10T07:52:36.000Z</published>
+    <updated>2019-04-10T07:58:20.242Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#简写</span></span><br><span class="line">hexo n <span class="string">"我的博客"</span> == hexo new <span class="string">"我的博客"</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo g == hexo generate<span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server <span class="comment">#启动服务预览</span></span><br><span class="line">hexo d == hexo deploy<span class="comment">#部署</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#服务器</span></span><br><span class="line">hexo server <span class="comment">#Hexo 会监视文件变动并自动更新，您无须重启服务器。</span></span><br><span class="line">hexo server -s <span class="comment">#静态模式</span></span><br><span class="line">hexo server -p <span class="number">5000</span> <span class="comment">#更改端口</span></span><br><span class="line">hexo server -i <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line"></span><br><span class="line">hexo clean <span class="comment">#清除缓存 网页正常情况下可以忽略此条命令</span></span><br><span class="line">hexo g <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d <span class="comment">#开始部署</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#监视文件变动</span></span><br><span class="line">hexo generate <span class="comment">#使用 Hexo 生成静态文件快速而且简单</span></span><br><span class="line">hexo generate --watch <span class="comment">#监视文件变动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#草稿</span></span><br><span class="line">hexo publish [layout] &lt;title&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#模版</span></span><br><span class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></span><br><span class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></span><br><span class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy <span class="comment">#将.deploy目录部署到GitHub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子</span></span><br><span class="line">hexo new [layout] &lt;title&gt;</span><br><span class="line">hexo new photo <span class="string">"My Gallery"</span></span><br><span class="line">hexo new <span class="string">"Hello World"</span> --lang tw</span><br><span class="line"></span><br><span class="line"><span class="comment">#推送到服务器上</span></span><br><span class="line">hexo n <span class="comment">#写文章</span></span><br><span class="line">hexo g <span class="comment">#生成</span></span><br><span class="line">hexo d <span class="comment">#部署 #可与hexo g合并为 hexo d -g</span></span><br></pre></td></tr></table></figure><h4 id="简易发布流程"><a href="#简易发布流程" class="headerlink" title="简易发布流程"></a>简易发布流程</h4><p>主要是通过配置一个alias命令来实现</p><p>例如博客文件夹的路径为 C:\blog_backup，将其替换为你自己的路径</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> alias.fuck <span class="string">'!cd C:\\blog_backup;hexo clean;hexo g -d'</span></span><br><span class="line">git fuck</span><br></pre></td></tr></table></figure><p>在任意目录打开git bash，就能够实现上述命令集；</p><p>如果要取消alias的话，可通过以下方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset alias.fuck</span><br></pre></td></tr></table></figure><p>个人设置了几个简易的命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git blogview #更新博客内容并发布到本地服务器</span><br><span class="line">git blogupdate #更新博客内容并部署到网站</span><br><span class="line">git blognew #新建博客文章，初始化名字为“new title”</span><br></pre></td></tr></table></figure><h4 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h4><ul><li><p>先将图片文件上传至bmob，获取到图片链接后，直接在markdown中添加链接</p></li><li><p>图片命名格式：文章发布年月日-当天发表文章序号-文章内图片序号（说明）  </p><p>序号以0起始</p><p>例如：20190222-0-1.png</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;hexo常用命令&quot;&gt;&lt;a href=&quot;#hexo常用命令&quot; class=&quot;headerlink&quot; title=&quot;hexo常用命令&quot;&gt;&lt;/a&gt;hexo常用命令&lt;/h4&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c
+      
+    
+    </summary>
+    
+      <category term="博客" scheme="http://liutaiyu.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="http://liutaiyu.cn/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络的性能</title>
