@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[华为实习生春招笔试]]></title>
-    <url>%2F2019%2F04%2F10%2F%E5%8D%8E%E4%B8%BA%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%98%A5%E6%8B%9B%E7%AC%94%E8%AF%95%2F</url>
+    <title><![CDATA[华为实习生春招笔试（二）]]></title>
+    <url>%2F2019%2F04%2F10%2F%E5%8D%8E%E4%B8%BA%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%98%A5%E6%8B%9B%E7%AC%94%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89%2F</url>
     <content type="text"><![CDATA[机试一共三道题：该题为其中第二道 题目描述： 给定一个字符串，字符串包含数字、大小写字母以及括号（包括大括号、中括号和小括号），括号可以嵌套。默认括号是匹配的，数字后面一定有括号。按照以下规则展开字符串： 数字表示括号里的字符串重复的次数，展开后的字符串不包括括号。 将字符串逆序展开 输入描述： 输入一个长度小于100的字符串 输出描述： 输出展开后的字符串 示例： 输入 1abc3(A) 输出 1AAAcba 思路：该题可以联想到数学式的混合运算的实现，借助栈来判断是否对当前数进行运算。本题中则是借助栈来判断是否对子结构进行一次字符串展开，子结构为: num（string）;算法思路如下： 从左至右遍历字符串，如果没有遇到右括号，则入栈。 当遇到右括号时，将其与左括号之间的字符出栈并存入临时字符串，并且重复n次 将展开后的字符串入栈，重复1，直至遍历结束。 将栈中的字符串弹出，即为展开后的逆序 1234567891011121314151617181920212223242526272829303132333435363738394041import java.util.*;public class Main &#123; public static void main(String[] args) &#123; Scanner sc = new Scanner(System.in); String input = sc.nextLine(); String res = ""; int i = 0; Stack&lt;String&gt; stack = new Stack&lt;&gt;(); if(input==null)return; while (i &lt; input.length()) &#123; if(input.charAt(i) == ']' || input.charAt(i) == ')' || input.charAt(i) == '&#125;')&#123; String t = ""; while (!stack.peek().equals("(") &amp;&amp;!stack.peek().equals("[") &amp;&amp;!stack.peek().equals("&#123;")) &#123; t = t + stack.pop(); &#125; stack.pop(); int s = Integer.valueOf(stack.pop()); String tmp =""; while (s--&gt;0)&#123; tmp +=t; &#125; stack.push(tmp); i++; &#125; else&#123; stack.push(String.valueOf(input.charAt(i++))); &#125; &#125; while(!stack.isEmpty())&#123; res = res + stack.pop(); &#125; System.out.print(res); &#125;&#125;]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[华为实习生春招笔试（一）]]></title>
+    <url>%2F2019%2F04%2F10%2F%E5%8D%8E%E4%B8%BA%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%98%A5%E6%8B%9B%E7%AC%94%E8%AF%95%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[机试一共三道题：该题为其中第一道 题目描述： 给定n个字符串，对字符串按序每8个字符分割出一个子串，对于原字符串或者分割剩余的字符串长度不足8的，在末尾补0。要求按照自然排序输出所有新的字符串。 输入描述： 输入一个整数n，在输入n个字符串，相互之间空格隔开。 输出描述： 输出规定的字符串 示例： 输入 12 abc 123456789 输出 112345678 90000000 abc00000 思路：主要是字符串的操作和字符串长度以及边界条件的问题。对于每个字符串按要求将分割的子串添加到数组末尾，并删除当前字符串。最后排序输出。 12345678910111213141516171819202122232425262728293031323334353637383940414243import java.util.*;public class Main1 &#123; public static void main(String[] args) &#123; Scanner sc = new Scanner(System.in); int n = sc.nextInt(); ArrayList&lt;String&gt; strings = new ArrayList&lt;&gt;(); while (n--&gt;0) &#123; strings.add(sc.next()); &#125; int size = strings.size(); for (int i = 0; i &lt;size; i++) &#123; //System.out.println(strings); String tmp = strings.get(0); int l = tmp.length(); int s = l/8; int ladd = 8-l%8; if(ladd==8)ladd=0; for (int j = 0; j &lt; s; j++) &#123; if(s&lt;1||ladd==0&amp;&amp;s==1)break; strings.add(tmp.substring(8 * j, 8 * (j+1))); &#125; String last = s&lt;1||ladd==0&amp;&amp;s==1?tmp:tmp.substring(s*8); while (ladd-- &gt; 0) &#123; last = last + "0"; &#125; strings.add(last); strings.remove(0); &#125; String[] str = strings.stream().toArray(String[]::new); Arrays.sort(str); for (int i = 0; i &lt; str.length; i++) &#123; if(i&lt;str.length-1) System.out.print(str[i]+" "); else System.out.print(str[i]); &#125; &#125;&#125;]]></content>
       <categories>
         <category>学习</category>
       </categories>
