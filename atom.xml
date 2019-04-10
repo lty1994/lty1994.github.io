@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liutaiyu.cn/"/>
-  <updated>2019-04-10T07:58:20.242Z</updated>
+  <updated>2019-04-10T14:33:26.817Z</updated>
   <id>http://liutaiyu.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为实习生春招笔试</title>
+    <link href="http://liutaiyu.cn/2019/04/10/%E5%8D%8E%E4%B8%BA%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%98%A5%E6%8B%9B%E7%AC%94%E8%AF%95/"/>
+    <id>http://liutaiyu.cn/2019/04/10/华为实习生春招笔试/</id>
+    <published>2019-04-10T13:59:50.000Z</published>
+    <updated>2019-04-10T14:33:26.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>机试一共三道题：该题为其中第二道</p><p>题目描述：</p><blockquote><p>给定一个字符串，字符串包含数字、大小写字母以及括号（包括大括号、中括号和小括号），括号可以嵌套。默认括号是匹配的，数字后面一定有括号。按照以下规则展开字符串：</p><ol><li>数字表示括号里的字符串重复的次数，展开后的字符串不包括括号。</li><li>将字符串逆序展开</li></ol></blockquote><p>输入描述：</p><blockquote><p>输入一个长度小于100的字符串</p></blockquote><p>输出描述：</p><blockquote><p>输出展开后的字符串</p></blockquote><p>示例：</p><p>输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc3(A)</span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AAAcba</span><br></pre></td></tr></table></figure><p>思路：该题可以联想到数学式的混合运算的实现，借助栈来判断是否对当前数进行运算。本题中则是借助栈来判断是否对子结构进行一次字符串展开，子结构为: num（string）;算法思路如下：</p><ol><li>从左至右遍历字符串，如果没有遇到右括号，则入栈。</li><li>当遇到右括号时，将其与左括号之间的字符出栈并存入临时字符串，并且重复n次</li><li>将展开后的字符串入栈，重复1，直至遍历结束。</li><li>将栈中的字符串弹出，即为展开后的逆序</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String input = sc.nextLine();</span><br><span class="line"></span><br><span class="line">        String res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        Stack&lt;String&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(input==<span class="keyword">null</span>)<span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; input.length()) &#123;</span><br><span class="line">            <span class="keyword">if</span>(input.charAt(i) == <span class="string">']'</span> </span><br><span class="line">               || input.charAt(i) == <span class="string">')'</span> </span><br><span class="line">               || input.charAt(i) == <span class="string">'&#125;'</span>)&#123;</span><br><span class="line">                String t = <span class="string">""</span>;</span><br><span class="line">                <span class="keyword">while</span> (!stack.peek().equals(<span class="string">"("</span>)</span><br><span class="line">                       &amp;&amp;!stack.peek().equals(<span class="string">"["</span>)</span><br><span class="line">                       &amp;&amp;!stack.peek().equals(<span class="string">"&#123;"</span>)) &#123;</span><br><span class="line">                    t = t + stack.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                stack.pop();</span><br><span class="line">                <span class="keyword">int</span> s = Integer.valueOf(stack.pop());</span><br><span class="line">                String tmp =<span class="string">""</span>;</span><br><span class="line">                <span class="keyword">while</span> (s--&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                    tmp +=t;</span><br><span class="line">                &#125;</span><br><span class="line">                stack.push(tmp);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                stack.push(String.valueOf(input.charAt(i++)));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">            res = res + stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;机试一共三道题：该题为其中第二道&lt;/p&gt;
+&lt;p&gt;题目描述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给定一个字符串，字符串包含数字、大小写字母以及括号（包括大括号、中括号和小括号），括号可以嵌套。默认括号是匹配的，数字后面一定有括号。按照以下规则展开字符串：&lt;/p&gt;
+&lt;ol
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://liutaiyu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="算法" scheme="http://liutaiyu.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>博客相关问题</title>

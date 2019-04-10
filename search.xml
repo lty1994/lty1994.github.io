@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[华为实习生春招笔试]]></title>
+    <url>%2F2019%2F04%2F10%2F%E5%8D%8E%E4%B8%BA%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%98%A5%E6%8B%9B%E7%AC%94%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[机试一共三道题：该题为其中第二道 题目描述： 给定一个字符串，字符串包含数字、大小写字母以及括号（包括大括号、中括号和小括号），括号可以嵌套。默认括号是匹配的，数字后面一定有括号。按照以下规则展开字符串： 数字表示括号里的字符串重复的次数，展开后的字符串不包括括号。 将字符串逆序展开 输入描述： 输入一个长度小于100的字符串 输出描述： 输出展开后的字符串 示例： 输入 1abc3(A) 输出 1AAAcba 思路：该题可以联想到数学式的混合运算的实现，借助栈来判断是否对当前数进行运算。本题中则是借助栈来判断是否对子结构进行一次字符串展开，子结构为: num（string）;算法思路如下： 从左至右遍历字符串，如果没有遇到右括号，则入栈。 当遇到右括号时，将其与左括号之间的字符出栈并存入临时字符串，并且重复n次 将展开后的字符串入栈，重复1，直至遍历结束。 将栈中的字符串弹出，即为展开后的逆序 1234567891011121314151617181920212223242526272829303132333435363738394041import java.util.*;public class Main &#123; public static void main(String[] args) &#123; Scanner sc = new Scanner(System.in); String input = sc.nextLine(); String res = ""; int i = 0; Stack&lt;String&gt; stack = new Stack&lt;&gt;(); if(input==null)return; while (i &lt; input.length()) &#123; if(input.charAt(i) == ']' || input.charAt(i) == ')' || input.charAt(i) == '&#125;')&#123; String t = ""; while (!stack.peek().equals("(") &amp;&amp;!stack.peek().equals("[") &amp;&amp;!stack.peek().equals("&#123;")) &#123; t = t + stack.pop(); &#125; stack.pop(); int s = Integer.valueOf(stack.pop()); String tmp =""; while (s--&gt;0)&#123; tmp +=t; &#125; stack.push(tmp); i++; &#125; else&#123; stack.push(String.valueOf(input.charAt(i++))); &#125; &#125; while(!stack.isEmpty())&#123; res = res + stack.pop(); &#125; System.out.print(res); &#125;&#125;]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[博客相关问题]]></title>
     <url>%2F2019%2F04%2F10%2F%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[hexo常用命令123456789101112131415161718192021222324252627282930313233343536373839#简写hexo n "我的博客" == hexo new "我的博客" #新建文章hexo g == hexo generate#生成hexo s == hexo server #启动服务预览hexo d == hexo deploy#部署#服务器hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。hexo server -s #静态模式hexo server -p 5000 #更改端口hexo server -i 192.168.1.1 #自定义 IPhexo clean #清除缓存 网页正常情况下可以忽略此条命令hexo g #生成静态网页hexo d #开始部署#监视文件变动hexo generate #使用 Hexo 生成静态文件快速而且简单hexo generate --watch #监视文件变动#草稿hexo publish [layout] &lt;title&gt;#模版hexo new "postName" #新建文章hexo new page "pageName" #新建页面hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）hexo deploy #将.deploy目录部署到GitHub#例子hexo new [layout] &lt;title&gt;hexo new photo "My Gallery"hexo new "Hello World" --lang tw#推送到服务器上hexo n #写文章hexo g #生成hexo d #部署 #可与hexo g合并为 hexo d -g 简易发布流程主要是通过配置一个alias命令来实现 例如博客文件夹的路径为 C:\blog_backup，将其替换为你自己的路径 12git config --global alias.fuck '!cd C:\\blog_backup;hexo clean;hexo g -d'git fuck 在任意目录打开git bash，就能够实现上述命令集； 如果要取消alias的话，可通过以下方式 1git config --global --unset alias.fuck 个人设置了几个简易的命令： 123git blogview #更新博客内容并发布到本地服务器git blogupdate #更新博客内容并部署到网站git blognew #新建博客文章，初始化名字为“new title” 图床 先将图片文件上传至bmob，获取到图片链接后，直接在markdown中添加链接 图片命名格式：文章发布年月日-当天发表文章序号-文章内图片序号（说明） 序号以0起始 例如：20190222-0-1.png]]></content>
