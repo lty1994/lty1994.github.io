@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[关于博客]]></title>
-    <url>%2F2018%2F11%2F06%2F%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[折腾了三天的博客，今天总算是告一段落了。搭建个人博客的目的其实很简单，就是为了记录自己学习的点点滴滴。当然过程中也对域名使用、git版本控制、markdown编辑也有了更深的理解和实践。目前的博客就是这样了，非常简单的使用hexo，之后有时间再来美化了。庆祝一下Heitu的博客正式开通！！]]></content>
+    <title><![CDATA[计算机网络的性能]]></title>
+    <url>%2F2019%2F02%2F22%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[主要介绍常用的七个性能指标: 速率比特(bit)是计算机中数据量的单位，也是信息论中使用的信息量的单位。英文单词bit来源于binary digit，意思是一个“二进制数字”。网络技术中的速率指的是连接在计算机网络上的主机在数字信道上传送数据的速率，它也称为数据率(data rate)或比特率(bit rate)。时间的基本单位是s(秒)，因此单位是bit/s(比特/秒，有时也写作bps，即bit per second)。（1Gbit/s = 10^3Mbit/s = 10^6Kbit/s = 10^9bit/s）。 注意：在通信领域和计算机领域，应特别注意数量单位“千”、“兆”、“吉”等的英文缩写所代表的数值。计算机中的数量单位用字节作为度量单位，“千字节”的“千”用大写K表示，它等于2^10，即1024，而不是1000。 带宽“带宽”有两种不同的意义： 带宽本来是指某个信号具有的频带宽度。信号的带宽是指该信号所包含的各种不同频率成份所占据的频率范围。这种意义的带宽的单位是赫。因此，表示通信线路允许通过的信号频带范围就称为线路的带宽(或通频带)。 在计算机网络中，带宽用来表示网络的通信线路传送数据的能力，因此网络带宽表示单位时间内从网络中的某一点到另一点所能通过的“最高数据率”。这种意义的带宽的单位是比特/秒。 在“带宽”的两种表述中，前者为频域称谓，而后者为时域称谓，其本质是相同的。也就是说，一条通信链路的“带宽”越宽，其所能传输的“最高数据率”也越高。 注意：宽带运行商和电脑对宽带的速度单位是不一样的，电脑的单位是KBbs，而宽带运营商的单位是Kbbs，1B = 8b。例如你从宽带运营商那里办理了10M的宽带。 10Mbps = 10240Kbps / 8 = 1280KBps. 上行带宽和下行带宽，或者说上行速度和下行速度是什么意思? 我们访问互联网的过程中存在这两种行为：一是上传数据，二是下载数据。上行宽带(速度)指的是上传的速度，而下行宽带(速度)指的是下载数据是的数度。 上行宽带(速度)和下行宽带(速度)是不对称的，一般是下行速度大于上行的速度。我们平时所使用的宽带说多少M，都是指的下行宽带，因为我们上网主要是从互联网上下载数据，而上传的数据量要少很多。 吞吐量 吞吐量(throughput)表示在单位时间内通过某个网络（或信道、接口）的数据量。吞吐量受网络带宽或网络的额定速率的限制。吞吐量更经常的用于对现实世界中的网络的一种测量，以便知道实际上到底有多少数据量能够通过网络。 时延 时延(delay 或 latency)是指数据（一个报文或分组，甚至比特）从网络（或链路）的一端传送到另一端所需的时间。时延是个很重要的性能指标。网络中的时延由以下几个不同的部分组成： 发送时延：指主机或路由器发送数据帧所需要的时间，也就是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需要的时间。发生在机器内部的发生器中,与传输信道的长度没有任何关系。 发送时延计算公式：数据帧的长度(bits) / 发送速率(bits/s) 由此可见发送时延与发送的帧长成正比，与发送速率成反比。 传播时延：指电磁波在信道中传播一定距离需要花费的时间。 传播时延计算公式：信道长度(m) / 电磁波在信道上的传播速率(m/s) 电磁波在自由空间传播速率是光速：3.0×10^5km/s，铜线电缆中：2.3×10^5km/s，光纤中：2.0×10^5km/s。传播时延与信号的发送速率无关。信号传送的距离越远，传播时延就越大。 处理时延：主机或路由器在收到分组时要花费一定的时间进行处理，例如分析分组的首部、从分组中提取数据部分、进行差错检验或查找适当的路由等等。 排队时延：分组在经过网络传输时，要经过许多路由器。但分组在进入路由器后要先在输入队列中排队等待处理。在路由器确定了转发接口后，还要在输出队列中排队等待转发。这就产生了排队时延。 总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延 注意：由于时延由以上四部分组成，所以不能笼统地认为：“数据的发送速率越高，传送得就越快”。同时需要特别注意一个错误观念：“在高速链路，比特应当跑得更快些”。这是不对的，因为对于高速网络链路，我们提高的仅仅是数据的发送速率，而不是比特在链路上的传播速率。提高数据的发送速率只是减少了数据的发送时延。而传播速率的单位是每秒传输多少公里，是指传输线路上比特的传播速率，通常是由线路决定而不变的。 时延带宽积 时延带宽积 = 传播时延 × 带宽 时延带宽积表示链路可容纳的比特数，因此，链路的时延带宽积又称为以比特为单位的链路长度。 往返时间RTT 往返时间RTT，表示从发送方发送数据开始，到发送方收到来自接收方的确认（接收方收到数据后便立即发送确认），总共经历的时间。往返时间一般就会包括分组在网络中的各种时延。 利用率利用率由信道利用率和网络利用率两种。信道利用率指出某信道有百分之几的时间是被利用的（有数据通过）。完全空闲的信道的利用率是零。网络的利用率则是全网络的信道利用率的加权平均值。信道利用率并非越高越好，这是因为，根据排队论的理论，当某信道的利用率增大时，该信道引起的时延也会迅速增加。信道或网络的利用率过高会产生非常大的时延。]]></content>
       <categories>
-        <category>随笔</category>
+        <category>计算机基础</category>
       </categories>
       <tags>
-        <tag>日记</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -16,11 +16,11 @@
     <url>%2F2018%2F11%2F05%2F148-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[题目来源：148. 排序链表在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。示例1: 输入: 4-&gt;2-&gt;1-&gt;3 输出: 1-&gt;2-&gt;3-&gt;4 示例2: 输入: -1-&gt;5-&gt;3-&gt;4-&gt;0 输出: -1-&gt;0-&gt;3-&gt;4-&gt;5 思路：考查链表的排序，要求的时间复杂度可以联想到快速排序、堆排序、归并排序。由于是链表，我们选择二分归并排序比较容易实现。以下是Java的两种实现。 解法一：常规的插入排序，用时较多12345678910111213141516171819202122232425262728/** * Definition for singly-linked list. * public class ListNode &#123; * int val; * ListNode next; * ListNode(int x) &#123; val = x; &#125; * &#125; */class Solution &#123; public ListNode sortList(ListNode head) &#123; ListNode root=new ListNode(0); root.next=head; ListNode p=head; while(p!=null&amp;&amp;p.next!=null)&#123; if(p.val&lt;=p.next.val)&#123;p=p.next;&#125; else&#123; ListNode tmp=root,q=p.next; while(tmp.next.val&lt;=q.val)&#123; tmp=tmp.next; &#125; p.next=q.next; q.next=tmp.next; tmp.next=q; &#125; &#125; return root.next; &#125;&#125; 解法二：二分归并排序,用时较少1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/** * Definition for singly-linked list. * public class ListNode &#123; * int val; * ListNode next; * ListNode(int x) &#123; val = x; &#125; * &#125; */class Solution &#123; public ListNode sortList(ListNode head) &#123; if(head==null || head.next==null) return head; return mergeSort(head); &#125; private static ListNode mergeSort(ListNode head)&#123; if(head==null || head.next==null) return head; //分治 ListNode p1 = head; ListNode p2 = head; //遍历对链表二分 while(p2.next!=null &amp;&amp; p2.next.next!=null)&#123; p1 = p1.next; p2 = p2.next.next; &#125; ListNode left = head; //左子链 ListNode right = p1.next; //右子链 p1.next = null; //排序子链表 left = mergeSort(left); right = mergeSort(right); //合并 if(left==null) return right; if(right==null) return left; ListNode h = new ListNode(-1); ListNode p = h; //对左右两数进行比较 while(left!=null &amp;&amp; right!=null)&#123; if(left.val&lt;right.val)&#123; p.next = left; left = left.next; p = p.next; &#125;else&#123; p.next = right; right = right.next; p = p.next; &#125; &#125; if(left==null) p.next = right; else p.next = left; return h.next; //返回表头 &#125;&#125;]]></content>
       <categories>
-        <category>算法</category>
-        <category>排序</category>
+        <category>计算机基础</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>排序算法</tag>
       </tags>
   </entry>
 </search>
