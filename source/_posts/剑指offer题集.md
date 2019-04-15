@@ -52,7 +52,9 @@ public class Solution {
 
 ### 题目21：调整数组数顺序使奇数位于偶数前面
 
-#### 题目描述：输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
+#### 题目描述：
+
+输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
 
 #### 分析：
 
@@ -89,11 +91,12 @@ void ReorderOddEven_1(int *pData, unsigned int length)
 
 
 
-上述书中的方法可以将while中对奇偶数的判断条件改成判定函数，则可以拓展代码的重用性。实现在给定的条件下，将数组划分成两部分。针对本题，考虑到稳定性，可以建一个队列，循环3次，分别将奇数、偶数打入队列，然后将队列输出修改原数组。时间复杂度是$3O\left( n\right)$，空间复杂度是$O\left(n\right)$。
+上述书中的方法可以将while中对奇偶数的判断条件改成判定函数，则可以拓展代码的重用性。实现在给定的条件下，将数组划分成两部分。针对本题，考虑到稳定性，可以建一个队列，循环3次，分别将奇数、偶数打入队列，然后将队列输出修改原数组。时间复杂度是$3O\left( n\right)$，空间复杂度是$O\left(n\right)​$。
 
 ```java
 public class Solution {
     public void reOrderArray(int [] array) {
+        if(array==null||array.length==0)return;
         int len = array.length;
         Queue<Integer> queue = new LinkedList<>();
         for(int i=0;i<len;i++){
@@ -105,6 +108,58 @@ public class Solution {
         for(int i=0;i<len;i++){
             array[i]=queue.poll();
         }
+    }
+}
+```
+
+------
+
+### 题目22：链表中倒数第k个结点
+
+#### 题目描述：
+
+输入一个链表，输出该链表中倒数第k个结点。
+
+#### 分析：
+
+该题最简单的思路是遍历两次，一次求得链表长度，第二次找到倒数第k个点。优化的办法是，设置两个指针，第一个指针遍历到第k-1个节点，第二个指针再从头开始，两个指针同时扫描直至第一个指针到达链表末尾。此时第二个指针指向的就是倒数第K个节点。
+
+这中间有几个边界条件需要特别注意：
+
+1. 输入链表为空
+2. 输入k为0
+3. 链表节点个数小于K
+
+```java
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+    public ListNode FindKthToTail(ListNode head,int k) {
+        if(head==null||k==0)return null;
+        ListNode front=head;
+        ListNode last;
+        for(int i =1;i<k;i++){
+            if(front.next!=null){
+                front=front.next;
+            }
+            else{
+                return null;
+            }
+        }
+        last=head;
+        while(front.next!=null){
+            last=last.next;
+            front=front.next;
+        }
+        return last;
+
     }
 }
 ```
