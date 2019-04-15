@@ -166,3 +166,44 @@ public class Solution {
 
 ------
 
+### 题目24：反转链表
+
+#### 题目描述：
+
+输入一个链表，反转链表后，输出新链表的表头。
+
+#### 分析：
+
+a->b->c->d...h->i->j->...
+
+a<-b<-c<-d...h<-i   j->...
+
+该问题关键在解决反转链表后的断裂怎么处理，我们用三个指针来处理。具体如下：
+
+```java
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+        ListNode now = null;     \\指向当前操作的节点
+        ListNode front = head;   \\指向下一个操作的节点
+        ListNode res=null;       \\指向反转链表的尾结点
+        while(front!=null){      \\判断是否到达尾结点
+            now=front;           \\获得本轮操作节点
+            front=front.next;    \\front指向下一个节点，解决链表断裂
+            \\反转节点
+            now.next=res;
+            res=now;
+        }
+        return res;
+    }
+}
+```
+
