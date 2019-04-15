@@ -192,6 +192,38 @@ W \\\\
 \end{matrix}
 \right] $$
 
+#### 换行问题（换行，等号对齐）
 
+公示太长需要换行的问题，并且是连等公示，每个等号在还行之后都需要对齐。 可以使用：
+
+其中aligned就是用来公式对齐的，在中间公式中，\\ 表示换行， & 表示对齐。在公式中等号之前加&，等号介绍要换行的地方加\\就可以了。
+
+```
+\begin{equation}
+\begin{aligned}
+......
+\end{aligned}
+\end{equation}
+例如：
+\begin{equation*}%加*表示不对公式编号
+\begin{split}
+PMV =&[0.303*exp(-0.036M)+0.0275]*\{M-W-3.05*[5.733-\\
+&0.007(M-W)-P_a]-0.42*(M-W-58.2)-0.0173M*\\
+&(5.867-P_a)-0.0014M*(34-t_a)-3.96*10^-8*f_cl*[(t_cl+\\
+&273)^4-(t_r+273)^4]-f_cl*h_c*(t_cl-t_a)\}
+\end{split}
+\end{equation*}
+```
+
+$$
+\begin{equation*}%加*表示不对公式编号
+\begin{split}
+PMV =&[0.303*exp(-0.036M)+0.0275]*\{M-W-3.05*[5.733-\\
+&0.007(M-W)-P_a]-0.42*(M-W-58.2)-0.0173M*\\
+&(5.867-P_a)-0.0014M*(34-t_a)-3.96*10^-8*f_cl*[(t_cl+\\
+&273)^4-(t_r+273)^4]-f_cl*h_c*(t_cl-t_a)\}
+\end{split}
+\end{equation*}
+$$
 
 参考：<http://stevenshi.me/2017/06/26/hexo-insert-formula/>
