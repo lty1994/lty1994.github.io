@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo中使用Latex公式]]></title>
+    <url>%2F2019%2F04%2F13%2FHexo%E4%B8%AD%E4%BD%BF%E7%94%A8Latex%E5%85%AC%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[使用公式插入格式： 12$数学公式$ 行内 不独占一行$$数学公式$$ 行间 独占一行 例如： 1234$f(x)=ax+b$ #行内显示$$f(x)=ax+b #行间显示$$ 显示效果为：$f(x)=ax+b​$ 行间使用则为： f(x)=ax+b语法格式上标与下标使用 ^ 表示上标，使用 _ 表示下标，如果上下标的内容多于一个字符，可以使用大括号括起来： 1$$f(x) = a_1x^n + a_2x^&#123;n-1&#125; + a_3x^&#123;n-2&#125;$$ 显示效果为： f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}如果左右两边都有上下标可以使用 \sideset 语法： 1$$\sideset&#123;^n_k&#125;&#123;^x_y&#125;a$$ \sideset{^n_k}{^x_y}a括号在 markdown 语法中，\, $, {, }, _都是有特殊含义的，所以需要加\转义。小括号与方括号可以使用原始的() [] 大括号需要转义\也可以使用\lbrace和 \rbrace 12\&#123;x*y\&#125;\lbrace x*y \rbrace 显示效果为：$\lbrace x*y \rbrace$ 原始符号不会随着公式大小自动缩放，需要使用 \left 和 \right 来实现自动缩放： 1$$\left \lbrace \sum_&#123;i=0&#125;^n i^3 = \frac&#123;(n^2+n)(n+6)&#125;&#123;9&#125; \right \rbrace$$ 效果(加上了\left 和 \right):$\left \lbrace \sum_{i=0}^n i^3 = \frac{(n^2+n)(n+6)}{9} \right \rbrace$ 没加的效果：$ \lbrace \sum_{i=0}^n i^3 = \frac{(n^2+n)(n+6)}{9} \rbrace$ 分数与开方可以使用\frac 或者 \over 实现分数的显示： 12$\frac xy$$ x+3 \over y+5 $ 分别显示为： $\frac xy$ $ x+3 \over y+5 $ 开方使用\sqrt: 12$ \sqrt&#123;x^5&#125; $$ \sqrt[3]&#123;\frac xy&#125; $ 显示为：$ \sqrt{x^5} $ $ \sqrt[3]{\frac xy} $ 求和与积分求和使用\sum,可加上下标，积分使用\int可加上下限，双重积分用\iint: 123$ \sum_&#123;i=0&#125;^n $$ \int_a ^ b $$ \iint_1 ^ \infty $ 分别显示：$ \sum_{i=0}^n $ $ \int_a^b $ $ \iint_1^\infty $ 极限极限使用\lim: $ \lim_{x \to 0} $ 1$ \lim_&#123;x \to 0&#125; $ 表格与矩阵表格样式lcr表示居中，|加入一条竖线，\hline表示行间横线，列之间用&amp;分隔，行之间用\分隔： \begin{array}{c|lcr} n & \text{Left} & \text{Center} & \text{Right} \\\\ \hline 1 & 1.97 & 5 & 12 \\\\ 2 & -11 & 19 & -80 \\\\ 3 & 70 & 209 & 1+i \\\\ \end{array}1234567$$\begin&#123;array&#125;&#123;c|lcr&#125;n &amp; \text&#123;Left&#125; &amp; \text&#123;Center&#125; &amp; \text&#123;Right&#125; \\\\\hline1 &amp; 1.97 &amp; 5 &amp; 12 \\\\2 &amp; -11 &amp; 19 &amp; -80 \\\\3 &amp; 70 &amp; 209 &amp; 1+i \\\\\end&#123;array&#125;$$ 矩阵: 123456789101112131415161718192021$$\left[\begin&#123;matrix&#125;V_A \\\\V_B \\\\V_C \\\\\end&#123;matrix&#125;\right] =\left[\begin&#123;matrix&#125;1 &amp; 0 &amp; L \\\\-cosψ &amp; sinψ &amp; L \\\\-cosψ &amp; -sinψ &amp; L\end&#123;matrix&#125;\right]\left[\begin&#123;matrix&#125;V_x \\\\V_y \\\\W \\\\\end&#123;matrix&#125;\right] $$ 显示效果： \left[ \begin{matrix} V_A \\\\ V_B \\\\ V_C \\\\ \end{matrix} \right] = \left[ \begin{matrix} 1 & 0 & L \\\\ -cosψ & sinψ & L \\\\ -cosψ & -sinψ & L \end{matrix} \right] \left[ \begin{matrix} V_x \\\\ V_y \\\\ W \\\\ \end{matrix} \right]参考：http://stevenshi.me/2017/06/26/hexo-insert-formula/]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[剑指offer题集]]></title>
+    <url>%2F2019%2F04%2F13%2F%E5%89%91%E6%8C%87offer%E9%A2%98%E9%9B%86%2F</url>
+    <content type="text"><![CDATA[题目16：数值的整数次方题目描述：给定一个double类型的浮点数base和int类型的整数exponent，求base的exponent次方。 分析：此题可以使用公式： {a^n}=\left\{\begin{matrix}{a^\frac{n}{2}}*{a^\frac{n}{2}},n为偶数\\ {a^\frac{n-1}{2}}*{a^\frac{n-1}{2}}*a,n为奇数 \end{matrix}\right.来求解a的n次幂，目的是可以减小乘法的次数，另外需要判断当幂指数不大于0和底数为0时的边界条件。 参考实现： 12345678910111213141516171819public class Solution &#123; public double Power(double base, int exponent) &#123; double res=1.0; if((exponent&amp;1)==1)res=base; boolean flag=true; //标识位幂指数是否为负 if(exponent&lt;0)&#123;//转为正幂指数 if(base==0)return 0; flag=false; exponent*=-1; &#125; double tmp=base*base; while(exponent&gt;1)&#123;//求乘法 res*=tmp; tmp=res; exponent = exponent&gt;&gt;1; &#125; return flag?res:1/res; &#125;&#125; 题目21：调整数组数顺序使奇数位于偶数前面题目描述：输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。分析：该题和原书中的题有一点不一样，本题要求保证数组元素的稳定。书中最简单的方法是从头到尾扫描数组，碰到一个偶数，拿出来放到数组末尾，其他元素向前移动一位。没碰到一个偶数我们就要移动$O\left ( n \right )​$该方法时间复杂度为$O\left ( n^{2} \right )​$。书中改进的方法是设置两个指针分别指向数组两端，如果碰到奇数偶数对，那么交换。这种方法显然是不稳定的。 1234567891011121314151617181920212223242526void ReorderOddEven_1(int *pData, unsigned int length)&#123; if(pData == nullptr || length == 0) return; int *pBegin = pData; int *pEnd = pData + length - 1; while(pBegin &lt; pEnd) &#123; // 向后移动pBegin，直到它指向偶数 while(pBegin &lt; pEnd &amp;&amp; (*pBegin &amp; 0x1) != 0) pBegin ++; // 向前移动pEnd，直到它指向奇数 while(pBegin &lt; pEnd &amp;&amp; (*pEnd &amp; 0x1) == 0) pEnd --; if(pBegin &lt; pEnd) &#123; int temp = *pBegin; *pBegin = *pEnd; *pEnd = temp; &#125; &#125;&#125; 上述书中的方法可以将while中对奇偶数的判断条件改成判定函数，则可以拓展代码的重用性。实现在给定的条件下，将数组划分成两部分。针对本题，考虑到稳定性，可以建一个队列，循环3次，分别将奇数、偶数打入队列，然后将队列输出修改原数组。时间复杂度是$3O\left( n\right)$，空间复杂度是$O\left(n\right)$。 123456789101112131415public class Solution &#123; public void reOrderArray(int [] array) &#123; int len = array.length; Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;(); for(int i=0;i&lt;len;i++)&#123; if((array[i]&amp;1)==1)queue.offer(array[i]); &#125; for(int i=0;i&lt;len;i++)&#123; if((array[i]&amp;1)==0)queue.offer(array[i]); &#125; for(int i=0;i&lt;len;i++)&#123; array[i]=queue.poll(); &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>学习</category>
+        <category>算法与数据结构</category>
+      </categories>
+      <tags>
+        <tag>算法题目</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[华为实习生春招笔试（二）]]></title>
     <url>%2F2019%2F04%2F10%2F%E5%8D%8E%E4%B8%BA%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%98%A5%E6%8B%9B%E7%AC%94%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89%2F</url>
     <content type="text"><![CDATA[机试一共三道题：该题为其中第二道 题目描述： 给定一个字符串，字符串包含数字、大小写字母以及括号（包括大括号、中括号和小括号），括号可以嵌套。默认括号是匹配的，数字后面一定有括号。按照以下规则展开字符串： 数字表示括号里的字符串重复的次数，展开后的字符串不包括括号。 将字符串逆序展开 输入描述： 输入一个长度小于100的字符串 输出描述： 输出展开后的字符串 示例： 输入 1abc3(A) 输出 1AAAcba 思路：该题可以联想到数学式的混合运算的实现，借助栈来判断是否对当前数进行运算。本题中则是借助栈来判断是否对子结构进行一次字符串展开，子结构为: num（string）;算法思路如下： 从左至右遍历字符串，如果没有遇到右括号，则入栈。 当遇到右括号时，将其与左括号之间的字符出栈并存入临时字符串，并且重复n次 将展开后的字符串入栈，重复1，直至遍历结束。 将栈中的字符串弹出，即为展开后的逆序 1234567891011121314151617181920212223242526272829303132333435363738394041import java.util.*;public class Main &#123; public static void main(String[] args) &#123; Scanner sc = new Scanner(System.in); String input = sc.nextLine(); String res = ""; int i = 0; Stack&lt;String&gt; stack = new Stack&lt;&gt;(); if(input==null)return; while (i &lt; input.length()) &#123; if(input.charAt(i) == ']' || input.charAt(i) == ')' || input.charAt(i) == '&#125;')&#123; String t = ""; while (!stack.peek().equals("(") &amp;&amp;!stack.peek().equals("[") &amp;&amp;!stack.peek().equals("&#123;")) &#123; t = t + stack.pop(); &#125; stack.pop(); int s = Integer.valueOf(stack.pop()); String tmp =""; while (s--&gt;0)&#123; tmp +=t; &#125; stack.push(tmp); i++; &#125; else&#123; stack.push(String.valueOf(input.charAt(i++))); &#125; &#125; while(!stack.isEmpty())&#123; res = res + stack.pop(); &#125; System.out.print(res); &#125;&#125;]]></content>
       <categories>
         <category>学习</category>
+        <category>算法与数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>算法题目</tag>
       </tags>
   </entry>
   <entry>
@@ -17,20 +41,21 @@
     <content type="text"><![CDATA[机试一共三道题：该题为其中第一道 题目描述： 给定n个字符串，对字符串按序每8个字符分割出一个子串，对于原字符串或者分割剩余的字符串长度不足8的，在末尾补0。要求按照自然排序输出所有新的字符串。 输入描述： 输入一个整数n，在输入n个字符串，相互之间空格隔开。 输出描述： 输出规定的字符串 示例： 输入 12 abc 123456789 输出 112345678 90000000 abc00000 思路：主要是字符串的操作和字符串长度以及边界条件的问题。对于每个字符串按要求将分割的子串添加到数组末尾，并删除当前字符串。最后排序输出。 12345678910111213141516171819202122232425262728293031323334353637383940414243import java.util.*;public class Main1 &#123; public static void main(String[] args) &#123; Scanner sc = new Scanner(System.in); int n = sc.nextInt(); ArrayList&lt;String&gt; strings = new ArrayList&lt;&gt;(); while (n--&gt;0) &#123; strings.add(sc.next()); &#125; int size = strings.size(); for (int i = 0; i &lt;size; i++) &#123; //System.out.println(strings); String tmp = strings.get(0); int l = tmp.length(); int s = l/8; int ladd = 8-l%8; if(ladd==8)ladd=0; for (int j = 0; j &lt; s; j++) &#123; if(s&lt;1||ladd==0&amp;&amp;s==1)break; strings.add(tmp.substring(8 * j, 8 * (j+1))); &#125; String last = s&lt;1||ladd==0&amp;&amp;s==1?tmp:tmp.substring(s*8); while (ladd-- &gt; 0) &#123; last = last + "0"; &#125; strings.add(last); strings.remove(0); &#125; String[] str = strings.stream().toArray(String[]::new); Arrays.sort(str); for (int i = 0; i &lt; str.length; i++) &#123; if(i&lt;str.length-1) System.out.print(str[i]+" "); else System.out.print(str[i]); &#125; &#125;&#125;]]></content>
       <categories>
         <category>学习</category>
+        <category>算法与数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>算法题目</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[博客相关问题]]></title>
     <url>%2F2019%2F04%2F10%2F%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[hexo常用命令123456789101112131415161718192021222324252627282930313233343536373839#简写hexo n "我的博客" == hexo new "我的博客" #新建文章hexo g == hexo generate#生成hexo s == hexo server #启动服务预览hexo d == hexo deploy#部署#服务器hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。hexo server -s #静态模式hexo server -p 5000 #更改端口hexo server -i 192.168.1.1 #自定义 IPhexo clean #清除缓存 网页正常情况下可以忽略此条命令hexo g #生成静态网页hexo d #开始部署#监视文件变动hexo generate #使用 Hexo 生成静态文件快速而且简单hexo generate --watch #监视文件变动#草稿hexo publish [layout] &lt;title&gt;#模版hexo new "postName" #新建文章hexo new page "pageName" #新建页面hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）hexo deploy #将.deploy目录部署到GitHub#例子hexo new [layout] &lt;title&gt;hexo new photo "My Gallery"hexo new "Hello World" --lang tw#推送到服务器上hexo n #写文章hexo g #生成hexo d #部署 #可与hexo g合并为 hexo d -g 简易发布流程主要是通过配置一个alias命令来实现 例如博客文件夹的路径为 C:\blog_backup，将其替换为你自己的路径 12git config --global alias.fuck '!cd C:\\blog_backup;hexo clean;hexo g -d'git fuck 在任意目录打开git bash，就能够实现上述命令集； 如果要取消alias的话，可通过以下方式 1git config --global --unset alias.fuck 个人设置了几个简易的命令： 123git blogview #更新博客内容并发布到本地服务器git blogupdate #更新博客内容并部署到网站git blognew #新建博客文章，初始化名字为“new title” 图床 先将图片文件上传至bmob，获取到图片链接后，直接在markdown中添加链接 图片命名格式：文章发布年月日-当天发表文章序号-文章内图片序号（说明） 序号以0起始 例如：20190222-0-1.png]]></content>
+    <content type="text"><![CDATA[Hexo常用命令123456789101112131415161718192021222324252627282930313233343536373839#简写hexo n "我的博客" == hexo new "我的博客" #新建文章hexo g == hexo generate#生成hexo s == hexo server #启动服务预览hexo d == hexo deploy#部署#服务器hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。hexo server -s #静态模式hexo server -p 5000 #更改端口hexo server -i 192.168.1.1 #自定义 IPhexo clean #清除缓存 网页正常情况下可以忽略此条命令hexo g #生成静态网页hexo d #开始部署#监视文件变动hexo generate #使用 Hexo 生成静态文件快速而且简单hexo generate --watch #监视文件变动#草稿hexo publish [layout] &lt;title&gt;#模版hexo new "postName" #新建文章hexo new page "pageName" #新建页面hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）hexo deploy #将.deploy目录部署到GitHub#例子hexo new [layout] &lt;title&gt;hexo new photo "My Gallery"hexo new "Hello World" --lang tw#推送到服务器上hexo n #写文章hexo g #生成hexo d #部署 #可与hexo g合并为 hexo d -g 简易发布流程主要是通过配置一个alias命令来实现 例如博客文件夹的路径为 C:\blog_backup，将其替换为你自己的路径 12git config --global alias.fuck '!cd C:\\blog_backup;hexo clean;hexo g -d'git fuck 在任意目录打开git bash，就能够实现上述命令集； 如果要取消alias的话，可通过以下方式 1git config --global --unset alias.fuck 个人设置了几个简易的命令： 123git blogview #更新博客内容并发布到本地服务器git blogupdate #更新博客内容并部署到网站git blognew #新建博客文章，初始化名字为“new title” 图床 先将图片文件上传至bmob，获取到图片链接后，直接在markdown中添加链接 图片命名格式：文章发布年月日-当天发表文章序号-文章内图片序号（说明） 序号以0起始 例如：20190222-0-1.png 文章分类结构文章主类分为：学习、工作、生活、爱好 标签可自行添加]]></content>
       <categories>
-        <category>博客</category>
+        <category>工作</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -38,6 +63,7 @@
     <url>%2F2019%2F02%2F22%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%2F</url>
     <content type="text"><![CDATA[主要介绍常用的七个性能指标: 速率比特(bit)是计算机中数据量的单位，也是信息论中使用的信息量的单位。英文单词bit来源于binary digit，意思是一个“二进制数字”。网络技术中的速率指的是连接在计算机网络上的主机在数字信道上传送数据的速率，它也称为数据率(data rate)或比特率(bit rate)。时间的基本单位是s(秒)，因此单位是bit/s(比特/秒，有时也写作bps，即bit per second)。（1Gbit/s = 10^3Mbit/s = 10^6Kbit/s = 10^9bit/s）。 注意：在通信领域和计算机领域，应特别注意数量单位“千”、“兆”、“吉”等的英文缩写所代表的数值。计算机中的数量单位用字节作为度量单位，“千字节”的“千”用大写K表示，它等于2^10，即1024，而不是1000。 带宽“带宽”有两种不同的意义： 带宽本来是指某个信号具有的频带宽度。信号的带宽是指该信号所包含的各种不同频率成份所占据的频率范围。这种意义的带宽的单位是赫。因此，表示通信线路允许通过的信号频带范围就称为线路的带宽(或通频带)。 在计算机网络中，带宽用来表示网络的通信线路传送数据的能力，因此网络带宽表示单位时间内从网络中的某一点到另一点所能通过的“最高数据率”。这种意义的带宽的单位是比特/秒。 在“带宽”的两种表述中，前者为频域称谓，而后者为时域称谓，其本质是相同的。也就是说，一条通信链路的“带宽”越宽，其所能传输的“最高数据率”也越高。 注意：宽带运行商和电脑对宽带的速度单位是不一样的，电脑的单位是KBbs，而宽带运营商的单位是Kbbs，1B = 8b。例如你从宽带运营商那里办理了10M的宽带。 10Mbps = 10240Kbps / 8 = 1280KBps. 上行带宽和下行带宽，或者说上行速度和下行速度是什么意思? 我们访问互联网的过程中存在这两种行为：一是上传数据，二是下载数据。上行宽带(速度)指的是上传的速度，而下行宽带(速度)指的是下载数据是的数度。 上行宽带(速度)和下行宽带(速度)是不对称的，一般是下行速度大于上行的速度。我们平时所使用的宽带说多少M，都是指的下行宽带，因为我们上网主要是从互联网上下载数据，而上传的数据量要少很多。 吞吐量 吞吐量(throughput)表示在单位时间内通过某个网络（或信道、接口）的数据量。吞吐量受网络带宽或网络的额定速率的限制。吞吐量更经常的用于对现实世界中的网络的一种测量，以便知道实际上到底有多少数据量能够通过网络。 时延 时延(delay 或 latency)是指数据（一个报文或分组，甚至比特）从网络（或链路）的一端传送到另一端所需的时间。时延是个很重要的性能指标。网络中的时延由以下几个不同的部分组成： 发送时延：指主机或路由器发送数据帧所需要的时间，也就是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需要的时间。发生在机器内部的发生器中,与传输信道的长度没有任何关系。 发送时延计算公式：数据帧的长度(bits) / 发送速率(bits/s) 由此可见发送时延与发送的帧长成正比，与发送速率成反比。 传播时延：指电磁波在信道中传播一定距离需要花费的时间。 传播时延计算公式：信道长度(m) / 电磁波在信道上的传播速率(m/s) 电磁波在自由空间传播速率是光速：3.0×10^5km/s，铜线电缆中：2.3×10^5km/s，光纤中：2.0×10^5km/s。传播时延与信号的发送速率无关。信号传送的距离越远，传播时延就越大。 处理时延：主机或路由器在收到分组时要花费一定的时间进行处理，例如分析分组的首部、从分组中提取数据部分、进行差错检验或查找适当的路由等等。 排队时延：分组在经过网络传输时，要经过许多路由器。但分组在进入路由器后要先在输入队列中排队等待处理。在路由器确定了转发接口后，还要在输出队列中排队等待转发。这就产生了排队时延。 总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延 注意：由于时延由以上四部分组成，所以不能笼统地认为：“数据的发送速率越高，传送得就越快”。同时需要特别注意一个错误观念：“在高速链路，比特应当跑得更快些”。这是不对的，因为对于高速网络链路，我们提高的仅仅是数据的发送速率，而不是比特在链路上的传播速率。提高数据的发送速率只是减少了数据的发送时延。而传播速率的单位是每秒传输多少公里，是指传输线路上比特的传播速率，通常是由线路决定而不变的。 时延带宽积 时延带宽积 = 传播时延 × 带宽 时延带宽积表示链路可容纳的比特数，因此，链路的时延带宽积又称为以比特为单位的链路长度。 往返时间RTT 往返时间RTT，表示从发送方发送数据开始，到发送方收到来自接收方的确认（接收方收到数据后便立即发送确认），总共经历的时间。往返时间一般就会包括分组在网络中的各种时延。 利用率利用率由信道利用率和网络利用率两种。信道利用率指出某信道有百分之几的时间是被利用的（有数据通过）。完全空闲的信道的利用率是零。网络的利用率则是全网络的信道利用率的加权平均值。信道利用率并非越高越好，这是因为，根据排队论的理论，当某信道的利用率增大时，该信道引起的时延也会迅速增加。信道或网络的利用率过高会产生非常大的时延。]]></content>
       <categories>
+        <category>学习</category>
         <category>计算机基础</category>
       </categories>
       <tags>
@@ -45,15 +71,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[148.排序链表]]></title>
-    <url>%2F2018%2F11%2F05%2F148-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%2F</url>
+    <title><![CDATA[LeetCode148-排序链表]]></title>
+    <url>%2F2018%2F11%2F05%2FLeetCode148-%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[题目来源：148. 排序链表在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。示例1: 输入: 4-&gt;2-&gt;1-&gt;3 输出: 1-&gt;2-&gt;3-&gt;4 示例2: 输入: -1-&gt;5-&gt;3-&gt;4-&gt;0 输出: -1-&gt;0-&gt;3-&gt;4-&gt;5 思路：考查链表的排序，要求的时间复杂度可以联想到快速排序、堆排序、归并排序。由于是链表，我们选择二分归并排序比较容易实现。以下是Java的两种实现。 解法一：常规的插入排序，用时较多12345678910111213141516171819202122232425262728/** * Definition for singly-linked list. * public class ListNode &#123; * int val; * ListNode next; * ListNode(int x) &#123; val = x; &#125; * &#125; */class Solution &#123; public ListNode sortList(ListNode head) &#123; ListNode root=new ListNode(0); root.next=head; ListNode p=head; while(p!=null&amp;&amp;p.next!=null)&#123; if(p.val&lt;=p.next.val)&#123;p=p.next;&#125; else&#123; ListNode tmp=root,q=p.next; while(tmp.next.val&lt;=q.val)&#123; tmp=tmp.next; &#125; p.next=q.next; q.next=tmp.next; tmp.next=q; &#125; &#125; return root.next; &#125;&#125; 解法二：二分归并排序,用时较少1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/** * Definition for singly-linked list. * public class ListNode &#123; * int val; * ListNode next; * ListNode(int x) &#123; val = x; &#125; * &#125; */class Solution &#123; public ListNode sortList(ListNode head) &#123; if(head==null || head.next==null) return head; return mergeSort(head); &#125; private static ListNode mergeSort(ListNode head)&#123; if(head==null || head.next==null) return head; //分治 ListNode p1 = head; ListNode p2 = head; //遍历对链表二分 while(p2.next!=null &amp;&amp; p2.next.next!=null)&#123; p1 = p1.next; p2 = p2.next.next; &#125; ListNode left = head; //左子链 ListNode right = p1.next; //右子链 p1.next = null; //排序子链表 left = mergeSort(left); right = mergeSort(right); //合并 if(left==null) return right; if(right==null) return left; ListNode h = new ListNode(-1); ListNode p = h; //对左右两数进行比较 while(left!=null &amp;&amp; right!=null)&#123; if(left.val&lt;right.val)&#123; p.next = left; left = left.next; p = p.next; &#125;else&#123; p.next = right; right = right.next; p = p.next; &#125; &#125; if(left==null) p.next = right; else p.next = left; return h.next; //返回表头 &#125;&#125;]]></content>
       <categories>
-        <category>计算机基础</category>
+        <category>学习</category>
+        <category>算法与数据结构</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
-        <tag>排序算法</tag>
+        <tag>算法题目</tag>
       </tags>
   </entry>
 </search>
