@@ -115,16 +115,20 @@
 
 
 
-  <meta name="description" content="IT菜鸟的的成长之路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heitu的博客">
-<meta property="og:url" content="http://liutaiyu.cn/categories/学习/index.html">
+  <meta name="description" content="决策树（Decision Tree）决策树是一种基本的分类和回归的方法，它是一种树形结构。其每个非叶节点表示一个特征属性上的测试，每个分支代表这个特征属性在其取值范围内的某一输出，而每个叶节点存放一个类别。 决策树进行决策的过程就是从根节点开始，测试待分类项中相应的特征属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的类别作为决策结果。 决策树学习本质上是从训练数据集中归纳出一组分类">
+<meta name="keywords" content="监督学习,算法模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="决策树基础">
+<meta property="og:url" content="http://liutaiyu.cn/2019/04/15/决策树基础/index.html">
 <meta property="og:site_name" content="Heitu的博客">
-<meta property="og:description" content="IT菜鸟的的成长之路">
+<meta property="og:description" content="决策树（Decision Tree）决策树是一种基本的分类和回归的方法，它是一种树形结构。其每个非叶节点表示一个特征属性上的测试，每个分支代表这个特征属性在其取值范围内的某一输出，而每个叶节点存放一个类别。 决策树进行决策的过程就是从根节点开始，测试待分类项中相应的特征属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的类别作为决策结果。 决策树学习本质上是从训练数据集中归纳出一组分类">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://o9wdag.ch.files.1drv.com/y4mOs4BhnCR_drkQjLvsWHyugFVX8gfiPGrCOVK2PuQUD8FH9dmzbiEL3JYB4Z0GtJfTEte5u_UDkWaXC5gsV58z_NCdSWe5tSh8GljXMqqHLYNCU-TxUTuMJ02fZDhWIdDlBAn87AKmD4cU3SZfm5XdjetIDVSm-o0wNzvFNVL5UjK72EHrvZ2sWlOO4aDp_LSh6c5QYiG9MNm5RbbodT9fg?width=706&height=462&cropmode=none">
+<meta property="og:updated_time" content="2019-04-15T09:11:31.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heitu的博客">
-<meta name="twitter:description" content="IT菜鸟的的成长之路">
+<meta name="twitter:title" content="决策树基础">
+<meta name="twitter:description" content="决策树（Decision Tree）决策树是一种基本的分类和回归的方法，它是一种树形结构。其每个非叶节点表示一个特征属性上的测试，每个分支代表这个特征属性在其取值范围内的某一输出，而每个叶节点存放一个类别。 决策树进行决策的过程就是从根节点开始，测试待分类项中相应的特征属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的类别作为决策结果。 决策树学习本质上是从训练数据集中归纳出一组分类">
+<meta name="twitter:image" content="https://o9wdag.ch.files.1drv.com/y4mOs4BhnCR_drkQjLvsWHyugFVX8gfiPGrCOVK2PuQUD8FH9dmzbiEL3JYB4Z0GtJfTEte5u_UDkWaXC5gsV58z_NCdSWe5tSh8GljXMqqHLYNCU-TxUTuMJ02fZDhWIdDlBAn87AKmD4cU3SZfm5XdjetIDVSm-o0wNzvFNVL5UjK72EHrvZ2sWlOO4aDp_LSh6c5QYiG9MNm5RbbodT9fg?width=706&height=462&cropmode=none">
 
 
 
@@ -133,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="http://liutaiyu.cn/categories/学习/">
+  <link rel="canonical" href="http://liutaiyu.cn/2019/04/15/决策树基础/">
 
 
 
@@ -143,7 +147,7 @@
   };
 </script>
 
-  <title>分类: 学习 | Heitu的博客</title>
+  <title>决策树基础 | Heitu的博客</title>
   
 
 
@@ -194,7 +198,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -247,7 +251,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
   </li>
@@ -317,210 +321,342 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>学习<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liutaiyu.cn/2019/04/15/决策树基础/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heitu">
+      <meta itemprop="description" content="IT菜鸟的的成长之路">
+      <meta itemprop="image" content="/uploads/touxiang.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heitu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/04/15/决策树基础/" itemprop="url">
-              
-                <span itemprop="name">决策树基础</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">决策树基础
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-15T11:04:25+08:00" content="2019-04-15">
-          04-15
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-15 11:04:25 / 修改时间：17:11:31" itemprop="dateCreated datePublished" datetime="2019-04-15T11:04:25+08:00">2019-04-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/学习/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/15/决策树基础/" class="leancloud_visitors" data-flag-title="决策树基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="本文字数">2.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/13/剑指offer题集/" itemprop="url">
-              
-                <span itemprop="name">剑指offer题集</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-13T11:25:30+08:00" content="2019-04-13">
-          04-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/10/华为实习生春招笔试（二）/" itemprop="url">
-              
-                <span itemprop="name">华为实习生春招笔试（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-10T22:36:50+08:00" content="2019-04-10">
-          04-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/10/华为实习生春招笔试（一）/" itemprop="url">
-              
-                <span itemprop="name">华为实习生春招笔试（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-10T21:59:50+08:00" content="2019-04-10">
-          04-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/22/计算机网络的性能/" itemprop="url">
-              
-                <span itemprop="name">计算机网络的性能</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-22T10:21:47+08:00" content="2019-02-22">
-          02-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/05/LeetCode148-排序链表/" itemprop="url">
-              
-                <span itemprop="name">LeetCode148-排序链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-05T17:03:36+08:00" content="2018-11-05">
-          11-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h3 id="决策树（Decision-Tree）"><a href="#决策树（Decision-Tree）" class="headerlink" title="决策树（Decision Tree）"></a>决策树（Decision Tree）</h3><p>决策树是一种基本的分类和回归的方法，它是一种树形结构。其每个非叶节点表示一个<strong>特征属性</strong>上的测试，每个分支代表这个特征属性在其取值范围内的某一输出，而每个叶节点存放一个<strong>类别</strong>。</p>
+<p>决策树进行<strong>决策的过程</strong>就是从根节点开始，测试待分类项中相应的特征属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的类别作为决策结果。</p>
+<p>决策树学习本质上是从训练数据集中归纳出一组分类规则。通常用损失函数表示这一目标，损失函数通常是正则化的极大似然函数，<strong>学习的策略是以损失函数为目标函数的最小化。</strong>学习的算法一般是启发式方法，近似求解最优值。学习算法是一个递归选择最优特征的过程。为了避免最后学习到的决策树发生过拟合现象，我们通常使用验证集来对学习到的决策树进行剪枝，使其有更好的泛化能力。</p>
+<p><img src="https://o9wdag.ch.files.1drv.com/y4mOs4BhnCR_drkQjLvsWHyugFVX8gfiPGrCOVK2PuQUD8FH9dmzbiEL3JYB4Z0GtJfTEte5u_UDkWaXC5gsV58z_NCdSWe5tSh8GljXMqqHLYNCU-TxUTuMJ02fZDhWIdDlBAn87AKmD4cU3SZfm5XdjetIDVSm-o0wNzvFNVL5UjK72EHrvZ2sWlOO4aDp_LSh6c5QYiG9MNm5RbbodT9fg?width=706&amp;height=462&amp;cropmode=none" alt="决策树结构"></p>
+<p><strong>决策树的结构有以下特点：</strong></p>
+<ul>
+<li>结点和有向边组成</li>
+<li>结点有内部结点和叶结点俩种类型</li>
+<li>内部结点表示一个特征，叶节点表示一个类，边表示该特征下可能的输出值</li>
+</ul>
+<p><strong>决策树学习的步骤通常包括：</strong></p>
+<ul>
+<li>特征选择</li>
+<li>决策树的生成</li>
+<li>决策树的剪枝</li>
+</ul>
+<p>下面从决策树学习的三个步骤介绍决策树模型的原理：</p>
+<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>特征选择的目的在于选取对训练数据能够分类的特征，常用的特征选择算法有ID.3、C4.5和基尼系数，相关的公式如下：</p>
+<h4 id="ID-3"><a href="#ID-3" class="headerlink" title="ID.3"></a>ID.3</h4><p>样本集合D对特征A的信息增益</p>
+<script type="math/tex; mode=display">
+g(D,A)=H(D)-H(D|A)\\
+H(D)=-\sum_{k=1}^{K}\frac{\left | C_{k} \right |}{\left | D \right |}\log_{2}\frac{\left | C_{k} \right |}{\left | D \right |}\\
+H(D|A)=-\sum_{i=1}^{n}\frac{\left | D_{i} \right |}{\left | D \right |}H(D_{i})</script><p>其中$H(D)$是数据集D的熵，$H(D<em>{i})$是数据集$D</em>{i}$的熵，$H(D|A)$是数据集D对特征A的条件熵。$D<em>{i}$是D中特征A取第i个值的样本子集，$C</em>{k}$是D中属于第k类的样本子集。n是特征A取值的个数，K是类的个数。</p>
+<h4 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h4><script type="math/tex; mode=display">
+g_{R}(D,A)=\frac{g(D,A)}{H_{A}(D)}</script><p>其中，$g(D,A)$是信息增益，$H_{A}(D)$是D关于特征A的值的熵。</p>
+<h4 id="CART（分类问题）"><a href="#CART（分类问题）" class="headerlink" title="CART（分类问题）"></a>CART（分类问题）</h4><script type="math/tex; mode=display">
+Gini(D)=1-\sum_{k=1}^{K}\left ( \frac{\left | C_{k} \right |}{\left | D \right |} \right )^2</script><p>特征A条件下集合D的基尼系数：</p>
+<script type="math/tex; mode=display">
+Gini(D,A)=\frac{\left | D_{1} \right |}{\left | D \right |}Gini(D_{1})+\frac{\left | D_{2} \right |}{\left | D \right |}Gini(D_{2})</script><h3 id="决策树的生成"><a href="#决策树的生成" class="headerlink" title="决策树的生成"></a>决策树的生成</h3><p>通常使用上述特征选择的方法，从根节点开始，递归的生成决策树。这里主要讲一下CART回归树的生成，CART对<strong>回归树用平方误差最小化准则，对分类树用基尼系数最小化准则</strong>，进行特征选择，生成树。</p>
+<h4 id="回归树"><a href="#回归树" class="headerlink" title="回归树"></a>回归树</h4><p>假设X,Y为输入和输出，Y为连续变量。假设我们将输入空间划分为M个单元$R<em>{1}…R</em>{M}$，并且每个单元$R<em>{m}$上有一个固定的输出值$c</em>{m}$，模型可以表示为：</p>
+<script type="math/tex; mode=display">
+f(x)=\sum_{m=1}^{M}c_{m}I(x\in{R_{m}})</script><p>我们可以用平方误差$\sum<em>{x</em>{i}\in{R<em>{m}}}(y</em>{i}-f(x_{i}))^2​$来表示回归树的训练误差，易知单元$R_m​$上的$c_m​$的最优值是单元上所有输入实例对应的输出值的均值：</p>
+<script type="math/tex; mode=display">
+\hat c_m=ave(y_i|x_i \in{R_m})</script><p>对于空间的划分，我们选择第j个特征$x^{(j)}$和它的取值s，并定义两个区域：</p>
+<script type="math/tex; mode=display">
+R_1(j,s)=\{x|x^{(j)}\leq s\}\hspace{3em}\hat R_2(j,s)=\{x|x^{(j)}> s\}</script><p>然后求解：</p>
+<script type="math/tex; mode=display">
+\min_{j,s}\left [ \min_{c_1}\sum_{x_{i}\in{R_{1}(j,s)}}(y_{i}-c_1)^2 +\min_{c_2}\sum_{x_{i}\in{R_{2}(j,s)}}(y_{i}-c_2)^2 \right ]</script><p>对于固定的输入变量j，可以找到s.</p>
+<script type="math/tex; mode=display">
+\hat c_m=\frac{1}{N_m}\sum_{x_i \in{R_{m}(j,s)}}y_i\hspace{1em}(x\in R_m,m=1,2)</script><p>然后遍历j，找到最优的（j，s）对。然后依据此对空间做一次划分，重复上述过程。这样生成的树我们通常称为最小二乘回归树。<strong>每一次划分后，下一次拟合的是残差。</strong></p>
+<h3 id="决策树的剪枝"><a href="#决策树的剪枝" class="headerlink" title="决策树的剪枝"></a>决策树的剪枝</h3><p>决策树的剪枝<strong>通过极小化决策树整体的Loss来实现</strong>，假设决策树T的叶节点个数为|T|，t是树T的叶节点，该叶节点有$N<em>{t}$个样本点，其中k类的样本点有$N</em>{tk}$个，$k=1,2,…,K$，$H<em>{t}(T)$为叶节点t上的经验熵，$\alpha \geq 0$为参数，则决策树学习的损失函数定义为：(其中经验熵为：$H</em>{t}(T)=-\sum<em>{k=1}^{K}\frac{N</em>{tk}}{N<em>{t}}\log \frac{N</em>{tk}}{N_{t}}$)</p>
+<script type="math/tex; mode=display">
+\begin{align}
+C_{\alpha}(T)&=\sum_{t=1}^{|T|}N_{t}H_{t}(T)+\alpha|T|\\
+&=-\sum_{t=1}^{|T|}\sum_{k=1}^{K}N_{tk}\log \frac{N_{tk}}{N_{t}}+\alpha|T|\\
+&=C(T)+\alpha|T|
+\end{align}</script><p>上式中C(T)表示模型对训练数据的预测误差，即模型和训练数据的拟合程度，|T|表示模型的复杂度。剪枝就是当α确定时，选择损失函数最小的模型，即损失函数最小的子树。</p>
+<blockquote>
+<p>算法：</p>
+<p>输入：生成树T，参数α</p>
+<p>输出：修剪后的子树$T_{\alpha}​$</p>
+<ol>
+<li>计算每个节点的经验熵</li>
+<li>递归的从树的叶节点向上回缩，<strong>如果回缩到父节点前后的损失函数值不增加，那么进行剪枝，将父节点变为新的叶节点</strong></li>
+<li>返回2，直至不能继续，得到损失函数最小的子树$T_{\alpha}$</li>
+</ol>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+    
+    
+	
+	
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------感谢您的阅读!-------------</div>
+    
+</div>
+      </div>
+    
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="Heitu 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Heitu</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liutaiyu.cn/2019/04/15/决策树基础/" title="决策树基础">http://liutaiyu.cn/2019/04/15/决策树基础/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/监督学习/" rel="tag"><i class="fa fa-tag"></i> 监督学习</a>
+          
+            <a href="/tags/算法模型/" rel="tag"><i class="fa fa-tag"></i> 算法模型</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/13/Hexo中使用Latex公式/" rel="next" title="Hexo中使用Latex公式">
+                <i class="fa fa-chevron-left"></i> Hexo中使用Latex公式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -541,8 +677,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -666,6 +811,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树（Decision-Tree）"><span class="nav-number">1.</span> <span class="nav-text">决策树（Decision Tree）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征选择"><span class="nav-number">2.</span> <span class="nav-text">特征选择</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ID-3"><span class="nav-number">2.1.</span> <span class="nav-text">ID.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C4-5"><span class="nav-number">2.2.</span> <span class="nav-text">C4.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CART（分类问题）"><span class="nav-number">2.3.</span> <span class="nav-text">CART（分类问题）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树的生成"><span class="nav-number">3.</span> <span class="nav-text">决策树的生成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回归树"><span class="nav-number">3.1.</span> <span class="nav-text">回归树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树的剪枝"><span class="nav-number">4.</span> <span class="nav-text">决策树的剪枝</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -827,6 +988,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
 
   
 
@@ -1181,43 +1346,40 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1237,9 +1399,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
