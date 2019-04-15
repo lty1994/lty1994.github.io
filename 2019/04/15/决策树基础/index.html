@@ -124,7 +124,7 @@
 <meta property="og:description" content="决策树（Decision Tree）决策树是一种基本的分类和回归的方法，它是一种树形结构。其每个非叶节点表示一个特征属性上的测试，每个分支代表这个特征属性在其取值范围内的某一输出，而每个叶节点存放一个类别。 决策树进行决策的过程就是从根节点开始，测试待分类项中相应的特征属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的类别作为决策结果。 决策树学习本质上是从训练数据集中归纳出一组分类">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://o9wdag.ch.files.1drv.com/y4mOs4BhnCR_drkQjLvsWHyugFVX8gfiPGrCOVK2PuQUD8FH9dmzbiEL3JYB4Z0GtJfTEte5u_UDkWaXC5gsV58z_NCdSWe5tSh8GljXMqqHLYNCU-TxUTuMJ02fZDhWIdDlBAn87AKmD4cU3SZfm5XdjetIDVSm-o0wNzvFNVL5UjK72EHrvZ2sWlOO4aDp_LSh6c5QYiG9MNm5RbbodT9fg?width=706&height=462&cropmode=none">
-<meta property="og:updated_time" content="2019-04-15T09:20:12.111Z">
+<meta property="og:updated_time" content="2019-04-15T10:06:32.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树基础">
 <meta name="twitter:description" content="决策树（Decision Tree）决策树是一种基本的分类和回归的方法，它是一种树形结构。其每个非叶节点表示一个特征属性上的测试，每个分支代表这个特征属性在其取值范围内的某一输出，而每个叶节点存放一个类别。 决策树进行决策的过程就是从根节点开始，测试待分类项中相应的特征属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的类别作为决策结果。 决策树学习本质上是从训练数据集中归纳出一组分类">
@@ -383,7 +383,7 @@
                 
               
 
-              <time title="创建时间：2019-04-15 11:04:25 / 修改时间：17:20:12" itemprop="dateCreated datePublished" datetime="2019-04-15T11:04:25+08:00">2019-04-15</time>
+              <time title="创建时间：2019-04-15 11:04:25 / 修改时间：18:06:32" itemprop="dateCreated datePublished" datetime="2019-04-15T11:04:25+08:00">2019-04-15</time>
             
 
             
@@ -506,7 +506,7 @@
 <script type="math/tex; mode=display">
 g(D,A)=H(D)-H(D|A)\\
 H(D)=-\sum_{k=1}^{K}\frac{\left | C_{k} \right |}{\left | D \right |}\log_{2}\frac{\left | C_{k} \right |}{\left | D \right |}\\
-H(D|A)=-\sum_{i=1}^{n}\frac{\left | D_{i} \right |}{\left | D \right |}H(D_{i})</script><p>其中$H(D)​$是数据集D的熵，$H(D_i)​$是数据集$D_i​$的熵，$H(D|A)​$是数据集D对特征A的条件熵。$D_i​$是D中特征A取第i个值的样本子集，$C_k​$是D中属于第k类的样本子集。n是特征A取值的个数，K是类的个数。</p>
+H(D|A)=-\sum_{i=1}^{n}\frac{\left | D_{i} \right |}{\left | D \right |}H(D_{i})</script><p>其中$H(D)$是数据集D的熵，<script type="math/tex">H(D_i)</script>是数据集<script type="math/tex">D_i</script>的熵，$H(D|A)$是数据集D对特征A的条件熵。<script type="math/tex">D_i</script>是D中特征A取第i个值的样本子集，<script type="math/tex">C_k</script>是D中属于第k类的样本子集。n是特征A取值的个数，K是类的个数。</p>
 <h4 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h4><script type="math/tex; mode=display">
 g_{R}(D,A)=\frac{g(D,A)}{H_{A}(D)}</script><p>其中，$g(D,A)$是信息增益，$H_{A}(D)$是D关于特征A的值的熵。</p>
 <h4 id="CART（分类问题）"><a href="#CART（分类问题）" class="headerlink" title="CART（分类问题）"></a>CART（分类问题）</h4><script type="math/tex; mode=display">
@@ -524,7 +524,7 @@ R_1(j,s)=\{x|x^{(j)}\leq s\}\hspace{3em}\hat R_2(j,s)=\{x|x^{(j)}> s\}</script><
 \min_{j,s}\left [ \min_{c_1}\sum_{x_{i}\in{R_{1}(j,s)}}(y_{i}-c_1)^2 +\min_{c_2}\sum_{x_{i}\in{R_{2}(j,s)}}(y_{i}-c_2)^2 \right ]</script><p>对于固定的输入变量j，可以找到s.</p>
 <script type="math/tex; mode=display">
 \hat c_m=\frac{1}{N_m}\sum_{x_i \in{R_{m}(j,s)}}y_i\hspace{1em}(x\in R_m,m=1,2)</script><p>然后遍历j，找到最优的（j，s）对。然后依据此对空间做一次划分，重复上述过程。这样生成的树我们通常称为最小二乘回归树。<strong>每一次划分后，下一次拟合的是残差。</strong></p>
-<h3 id="决策树的剪枝"><a href="#决策树的剪枝" class="headerlink" title="决策树的剪枝"></a>决策树的剪枝</h3><p>决策树的剪枝<strong>通过极小化决策树整体的Loss来实现</strong>，假设决策树T的叶节点个数为|T|，t是树T的叶节点，该叶节点有$N<em>t$个样本点，其中k类的样本点有$N</em>{tk}$个，$k=1,2,…,K$，$H<em>{t}(T)$为叶节点t上的经验熵，$ \alpha \geq 0 $为参数，则决策树学习的损失函数定义为：其中经验熵为：$ H</em>{t}(T)=-\sum<em>{k=1}^{K}\frac{N</em>{tk}}{N<em>{t}}\log \frac{N</em>{tk}}{N_{t}} $</p>
+<h3 id="决策树的剪枝"><a href="#决策树的剪枝" class="headerlink" title="决策树的剪枝"></a>决策树的剪枝</h3><p>决策树的剪枝<strong>通过极小化决策树整体的Loss来实现</strong>，假设决策树T的叶节点个数为|T|，t是树T的叶节点，该叶节点有$N<em>t​$个样本点，其中k类的样本点有$$N</em>{tk}​<script type="math/tex">个，$k=1,2,...,K​$，$H_{t}(T)​$为叶节点t上的经验熵，$ \alpha \geq 0 ​$为参数，则决策树学习的损失函数定义为：其中经验熵为：</script> H<em>{t}(T)=-\sum</em>{k=1}^{K}\frac{N<em>{tk}}{N</em>{t}}\log \frac{N<em>{tk}}{N</em>{t}} ​$$</p>
 <script type="math/tex; mode=display">
 \begin{align}
 C_{\alpha}(T)&=\sum_{t=1}^{|T|}N_{t}H_{t}(T)+\alpha|T|\\
