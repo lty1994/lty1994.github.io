@@ -124,7 +124,7 @@
 <meta property="og:description" content="题目16：数值的整数次方 题目描述  给定一个double类型的浮点数base和int类型的整数exponent，求base的exponent次方。  分析  此题可以使用公式：  {a^n}=\left\{\begin{matrix}{a^\frac{n}{2}}*{a^\frac{n}{2}},n为偶数\\ {a^\frac{n-1}{2}}*{a^\frac{n-1}{2}}*a,n为奇数">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://qtz5aq.ch.files.1drv.com/y4ma1HbikeYEQ_RqZxLokCR41f8eSRTJaqAI6BYlOpCxAnI6ZJRRCBurti5F9zfWZvVp8rGrjawlWw2AHN1VWft2Ld9CnLIzbZtrv30EduoGdUQjqVQfdA0jlQKdbfvIelfBZzMN9ys0az5YazAB3wKcSCXK2QQwwONxpTCOsrSixzMksQBd1iert12RyyuNT1R2AlL4G3Opv8aCxsh_IiqCg?width=2691&height=2355&cropmode=none">
-<meta property="og:updated_time" content="2019-04-16T05:11:04.368Z">
+<meta property="og:updated_time" content="2019-04-16T05:19:07.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer题集笔记">
 <meta name="twitter:description" content="题目16：数值的整数次方 题目描述  给定一个double类型的浮点数base和int类型的整数exponent，求base的exponent次方。  分析  此题可以使用公式：  {a^n}=\left\{\begin{matrix}{a^\frac{n}{2}}*{a^\frac{n}{2}},n为偶数\\ {a^\frac{n-1}{2}}*{a^\frac{n-1}{2}}*a,n为奇数">
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 13:11:04" itemprop="dateModified" datetime="2019-04-16T13:11:04+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-16 13:19:07" itemprop="dateModified" datetime="2019-04-16T13:19:07+08:00">2019-04-16</time>
               
             
           </span>
@@ -476,7 +476,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                <span title="阅读时长">14 分钟</span>
+                <span title="阅读时长">13 分钟</span>
               
             </div>
           
@@ -595,13 +595,13 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">public class TreeNode &#123;    </span></span><br><span class="line"><span class="comment">	int val = 0;</span></span><br><span class="line"><span class="comment">    TreeNode left = null;</span></span><br><span class="line"><span class="comment">    TreeNode right = null;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public TreeNode(int val) &#123;</span></span><br><span class="line"><span class="comment">        this.val = val;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">HasSubtree</span><span class="params">(TreeNode root1,TreeNode root2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> res = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(root1!=<span class="keyword">null</span>&amp;&amp;root2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(root1.val==root2.val)res=help(root1,root2);</span><br><span class="line">            <span class="keyword">if</span>(!res)res=HasSubtree(root1.left,root2);</span><br><span class="line">            <span class="keyword">if</span>(!res)res=HasSubtree(root1.right,root2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">help</span><span class="params">(TreeNode root1,TreeNode root2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root2==<span class="keyword">null</span>)<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(root1==<span class="keyword">null</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(root1.val!=root2.val)<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> help(root1.left,root2.left)&amp;&amp;help(root1.right,root2.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="题目26：二叉树的镜像"><a href="#题目26：二叉树的镜像" class="headerlink" title="题目26：二叉树的镜像"></a>题目26：二叉树的镜像</h3><ul>
+<h3 id="题目27：二叉树的镜像"><a href="#题目27：二叉树的镜像" class="headerlink" title="题目27：二叉树的镜像"></a>题目27：二叉树的镜像</h3><ul>
 <li><strong>题目描述</strong></li>
 </ul>
 <p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
 <p>输入描述：</p>
 <blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; 二叉树的镜像定义：源二叉树 </span><br><span class="line">&gt;     	    8</span><br><span class="line">&gt;     	   /  \</span><br><span class="line">&gt;     	  6   10</span><br><span class="line">&gt;     	 / \  / \</span><br><span class="line">&gt;     	5  7 9 11</span><br><span class="line">&gt;     	镜像二叉树</span><br><span class="line">&gt;     	    8</span><br><span class="line">&gt;     	   /  \</span><br><span class="line">&gt;     	  10   6</span><br><span class="line">&gt;     	 / \  / \</span><br><span class="line">&gt;     	11 9 7  5</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>二叉树的镜像定义：源二叉树<br>            8<br>           /  \<br>          6   10<br>         /  \   /   \<br>        5  7 9   11<br>    镜像二叉树<br>            8<br>           /  \<br>        10   6<br>            /  \   /  \<br>          11  9 7  5</p>
 </blockquote>
 <ul>
 <li><strong>分析</strong></li>
@@ -895,7 +895,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目16：数值的整数次方"><span class="nav-text">题目16：数值的整数次方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目21：调整数组数顺序使奇数位于偶数前面"><span class="nav-text">题目21：调整数组数顺序使奇数位于偶数前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目22：链表中倒数第k个结点"><span class="nav-text">题目22：链表中倒数第k个结点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目24：反转链表"><span class="nav-text">题目24：反转链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目25：合并两个排序的链表"><span class="nav-text">题目25：合并两个排序的链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目26：树的子结构"><span class="nav-text">题目26：树的子结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目26：二叉树的镜像"><span class="nav-text">题目26：二叉树的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未完待续…"><span class="nav-text">未完待续…</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目16：数值的整数次方"><span class="nav-text">题目16：数值的整数次方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目21：调整数组数顺序使奇数位于偶数前面"><span class="nav-text">题目21：调整数组数顺序使奇数位于偶数前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目22：链表中倒数第k个结点"><span class="nav-text">题目22：链表中倒数第k个结点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目24：反转链表"><span class="nav-text">题目24：反转链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目25：合并两个排序的链表"><span class="nav-text">题目25：合并两个排序的链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目26：树的子结构"><span class="nav-text">题目26：树的子结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目27：二叉树的镜像"><span class="nav-text">题目27：二叉树的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未完待续…"><span class="nav-text">未完待续…</span></a></li></ol></div>
             
 
           </div>
