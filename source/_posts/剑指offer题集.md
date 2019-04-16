@@ -477,6 +477,74 @@ public class Solution {
 
 ------
 
+### 题目28：二叉搜索树的后序遍历序列
+
+- **题目描述**
+
+输入一个整数数组，判断该数组是不是某[二叉搜索树](<https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91>)的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
+
+- **分析**
+
+本题考查了二叉搜索树的结构，同时考查了数组的操作。
+
+- **参考实现**
+
+```java
+public class Solution {
+    public boolean VerifySquenceOfBST(int [] sequence) {
+        if(sequence==null||sequence.length==0)return false;
+        if(sequence.length<3)return true;
+        return help(sequence,0,sequence.length-1);
+    }
+    public boolean help(int[] arr,int front,int last){
+        if(front>=last)return true;
+        int target=arr[last];
+        int id1=front;
+        if(arr[id1]<target){
+            while(id1<last&&arr[id1]<target)id1++;
+            int id2=id1;
+            while(id2<last){
+                if(arr[id2]<target)return false;
+                id2++;
+            }
+            return help(arr,front,id1-1)&&help(arr,id1,last-1);
+        }else{
+            while(id1<last){
+                if(arr[id1]<target)return false;
+                id1++;
+            }
+            return help(arr,front,last-1);
+        }
+    }
+}
+```
+
+上述代码存在冗余，检测右子树重复了。我们可以优化一下：
+
+```java
+public class Solution {
+    public boolean VerifySquenceOfBST(int [] sequence) {
+        if(sequence==null||sequence.length==0)return false;
+        if(sequence.length<3)return true;
+        return help(sequence,0,sequence.length-1);
+    }
+    public boolean help(int[] arr,int front,int last){
+        if(front>=last)return true;
+        int i=front;
+        while(i<last){
+            if(arr[i]>arr[last])break;
+            i++;
+        }
+        for(int j=i;j<last;j++){
+            if(arr[j]<arr[last])return false;
+        }
+        return help(arr,front,i-1)&&help(arr,i,last-1);
+    }
+}
+```
+
+------
+
 
 
 ### 未完待续...
