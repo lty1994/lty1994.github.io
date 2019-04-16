@@ -431,6 +431,52 @@ public class Solution {
 
 ------
 
+### 题目28：从上往下打印二叉树
+
+- **题目描述**
+
+从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+
+- **分析**
+
+本题实际上考察的是树的层序遍历。借住队列，每次将父节点的左节点和右节点依次送入队尾，然后从队首取出元素的序列即为层序遍历。
+
+- **参考实现**
+
+```java
+/**
+public class TreeNode {
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
+
+    public TreeNode(int val) {
+        this.val = val;
+
+    }
+
+}
+*/
+public class Solution {
+    public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+        ArrayList<Integer> res=new ArrayList<>();
+        if(root==null)return res;
+        Queue<TreeNode> queue =new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            TreeNode now=queue.peek();
+            if(now.left!=null)queue.offer(now.left);
+            if(now.right!=null)queue.offer(now.right);
+            res.add(queue.poll().val);
+        }
+        return res;
+        
+    }
+}
+```
+
+------
+
 
 
 ### 未完待续...
