@@ -312,4 +312,127 @@ public class Solution {
 
 ------
 
+### 题目27：二叉树的镜像
+
+- **题目描述**
+
+操作给定的二叉树，将其变换为源二叉树的镜像。
+
+输入描述：
+
+> 二叉树的镜像定义：源二叉树 
+>     	    8
+>     	   /  \
+>     	  6   10
+>     	 /  \   /   \
+>     	5  7 9   11
+>     镜像二叉树
+>     	    8
+>     	   /  \
+>     	10   6
+>             /  \   /  \
+>           11  9 7  5
+
+- **分析**
+
+本题实际上考察的是树的遍历，问题大致过程如下：
+
+先前序遍历树的每个节点，当节点不是叶节点的时候，就交换两个子节点。要注意的是，虽然在遍历过程中对子节点进行了交换，但是递归的调用栈的顺序为前序遍历的顺序，不会改变。可以用递归直接实现，也可以借助队列循环实现。
+
+- **参考实现**
+
+```java
+/**
+public class TreeNode {
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
+
+    public TreeNode(int val) {
+        this.val = val;
+
+    }
+
+}
+*/
+public class Solution {
+    public void Mirror1(TreeNode root) {  \\递归实现
+        if(root==null)return;
+        if(root.left!=null||root.right!=null){
+            TreeNode tmp=root.left;
+            root.left=root.right;
+            root.right=tmp;
+            if(root.left!=null)Mirror(root.left);
+            if(root.right!=null)Mirror(root.right);
+        }
+        return;
+    }    
+    public void Mirror2(TreeNode root) {\\循环实现
+        if(root==null)return;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            TreeNode now=queue.peek();
+            if(now.left!=null||now.right!=null){
+                TreeNode tmp=now.left;
+                now.left=now.right;
+                now.right=tmp;
+                queue.poll();
+                if(now.left!=null)queue.offer(now.left);
+                if(now.right!=null)queue.offer(now.right);
+            }else{
+                queue.poll();
+            }
+            
+        }
+    }
+}
+```
+
+------
+
+### 题目28：对称的二叉树
+
+- **题目描述**
+
+请实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。
+
+- **分析**
+
+本题实际上考察的是树的遍历过程。树的前序、中序和后序遍历都是先访问左子树，然后再访问右子树。在本题中，我们不难发现，先访问右子树再访问左子树遍历得到的序列和原来先左后右遍历得到的序列应该相同。但是有一种特殊情况，就是树的所有节点的值相同，他们的输出序列永远相同。这个时候考虑树中空节点的情况，两种遍历方式中，遍历到某个位置的时候，两个位置要么相同，要么同时为空，否则就不对称。
+
+- **参考实现**
+
+```java
+/*
+public class TreeNode {
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
+
+    public TreeNode(int val) {
+        this.val = val;
+
+    }
+
+}
+*/
+public class Solution {
+    boolean isSymmetrical(TreeNode pRoot)
+    {
+        return isSymmetrical(pRoot,pRoot);\\让树分别从左子树和右子树两个方向遍历
+    }
+    boolean isSymmetrical(TreeNode p1,TreeNode p2){
+        if(p1==null&&p2==null)return true;
+        if(p1==null||p2==null)return false;
+        if(p1.val!=p2.val)return false;
+        return isSymmetrical(p1.left,p2.right)&&isSymmetrical(p1.right,p2.left);
+    }
+}
+```
+
+------
+
+
+
 ### 未完待续...
