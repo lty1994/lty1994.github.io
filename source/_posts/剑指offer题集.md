@@ -227,8 +227,6 @@ public class Solution {
 
 ![链表合并过程](https://qtz5aq.ch.files.1drv.com/y4ma1HbikeYEQ_RqZxLokCR41f8eSRTJaqAI6BYlOpCxAnI6ZJRRCBurti5F9zfWZvVp8rGrjawlWw2AHN1VWft2Ld9CnLIzbZtrv30EduoGdUQjqVQfdA0jlQKdbfvIelfBZzMN9ys0az5YazAB3wKcSCXK2QQwwONxpTCOsrSixzMksQBd1iert12RyyuNT1R2AlL4G3Opv8aCxsh_IiqCg?width=2691&height=2355&cropmode=none)
 
-a<-b<-c<-d...h<-i   j->...可以用递归实现
-
 每一次都是选择两个链表中较小值的节点作为合并链表的头结点，然后我们再将上一次合并链表的尾结点与本次的头结点链接起来，就可以得到合并的链表。具体实现，用递归是最简单的。时间复杂度为$$O(list1.length+list2.lenght)$$
 
 - **参考实现**
