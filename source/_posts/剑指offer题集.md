@@ -8,6 +8,59 @@ categories:
 - 算法与数据结构
 ---
 
+### 题目13：机器人的运动范围
+
+- **题目描述**
+
+地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？
+
+- **分析**
+
+该类问题可以用回溯法来求解，回溯法非常适合由多个步骤组成的问题，并且每个步骤都有多个选项。当我们在某一步选择了其中一个选项时，我们进入下一步，然后又面临新的选项。重复直至到达最终的状态。
+
+该题过程并不复杂。用count表示机器人能到达的格子的个数，机器人一开始从（0,0）开始移动，当它准备进入（i，j）时，首先检查是否能到达，如果能到达，count+1。再判断（i，j）周围相邻的格子（需要注意边界上的格子没有4个相邻格子）是否能够到达。使用一个数组来标记格子是否已达，避免重复累加。同时，定义函数返回某一格是否可达，这个函数主要是判断格子是否满足相应的约束条件。
+
+- **参考实现**
+
+```java
+public class Solution {
+    public int movingCount(int threshold, int rows, int cols)
+    {
+        if(threshold<0||rows<=0||cols<=0)return 0;
+        boolean[] visit = new boolean[rows*cols];
+        for(int i =0;i<rows*cols;i++){
+            visit[i]=false;
+        }
+        return help(threshold,rows,cols,0,0,visit);
+    }
+    public int help(int threshold,int rows,int cols,int row,int col,boolean[]visit){
+        int count=0;
+        if(check(threshold,rows,cols,row,col,visit)){
+            visit[row*cols+col]=true;
+            count=1+help(threshold,rows,cols,row-1,col,visit)
+                +help(threshold,rows,cols,row,col-1,visit)
+                +help(threshold,rows,cols,row+1,col,visit)
+                +help(threshold,rows,cols,row,col+1,visit);
+        }
+        return count;
+    }
+    public boolean check(int threshold,int rows,int cols,int row,int col,boolean[]visit){
+        if(row>=0&&row<rows&&col>=0&&col<cols&&getNum(row)+getNum(col)<=threshold&&!visit[row*cols+col])return true;
+        return false;
+    }
+    public int getNum(int num){
+        int sum =0;
+        while(num>0){
+            sum+=num%10;
+            num/=10;
+        }
+        return sum;
+    }
+}
+```
+
+------
+
 ### 题目16：数值的整数次方
 
 - **题目描述**
@@ -431,7 +484,7 @@ public class Solution {
 
 ------
 
-### 题目28：从上往下打印二叉树
+### 题目32：从上往下打印二叉树
 
 - **题目描述**
 
@@ -477,7 +530,7 @@ public class Solution {
 
 ------
 
-### 题目28：二叉搜索树的后序遍历序列
+### 题目33：二叉搜索树的后序遍历序列
 
 - **题目描述**
 
