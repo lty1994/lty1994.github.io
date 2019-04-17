@@ -8,6 +8,63 @@ categories:
 - 算法与数据结构
 ---
 
+### 题目12：矩阵中的路径
+
+- **题目描述**
+
+请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则之后不能再次进入这个格子。 例如 a b c e s f c s a d e e 这样的3 X 4 矩阵中包含一条字符串"bcced"的路径，但是矩阵中不包含"abcb"路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。
+
+- **分析**
+
+该类问题可以用[回溯法](<https://baike.baidu.com/item/%E5%9B%9E%E6%BA%AF%E6%B3%95>)来求解，回溯法非常适合由多个步骤组成的问题，并且每个步骤都有多个选项。当我们在某一步选择了其中一个选项时，我们进入下一步，然后又面临新的选项。重复直至到达最终的状态。
+
+该题过程主要如下：
+
+遍历矩阵中的所有节点（因为题目允许从任何一个格子开始），对于其中一个节点作为起始节点，然后向四周（符合回溯的条件）寻找下一个和字符串匹配的节点，如果有，那么继续向后寻找路径，如果没有，则遍历下一个节点作为起始节点。直至遍历完所有节点。
+
+过程中我们需要一个标志位来标记节点是否已为路径上的节点，和一个整数保存路径的长度。要注意的是如果该节点四周没有可以继续的路径选项，那么，需要对当前节点进行复位操作（路径长度-1，取消路径节点的标记）。
+
+- **参考实现**
+
+```java
+public class Solution {
+    public boolean hasPath(char[] matrix, int rows, int cols, char[] str)
+    {
+        if(matrix==null||str==null||rows<1||cols<1)return false;
+        boolean[] visit=new boolean[rows*cols];
+        for(int i=0;i<rows*cols;i++)
+            visit[i]=false;
+        int pathlen=0;
+        for(int row=0;row<rows;row++){
+            for(int col=0;col<cols;col++){
+                if(has(matrix,rows,cols,row,col,str,visit,pathlen))
+                    return true;
+            }
+        }
+        return false;
+    }
+    public boolean has(char[] matrix, int rows, int cols,int row,int col, char[] str,boolean[]visit,int pathlen){
+        if(pathlen==str.length)return true;
+        boolean haspath=false;
+if(row<rows&&col<cols&&row>=0&&col>=0&&matrix[row*cols+col]==str[pathlen]&&!visit[row*cols+col]){
+            pathlen++;
+            visit[row*cols+col]=true;
+            haspath = has(matrix,rows,cols,row-1,col,str,visit,pathlen)
+                    ||has(matrix,rows,cols,row,col-1,str,visit,pathlen)
+                    ||has(matrix,rows,cols,row,col+1,str,visit,pathlen)
+                    ||has(matrix,rows,cols,row+1,col,str,visit,pathlen);
+            if(!haspath){
+                pathlen--;
+                visit[row*cols+col]=false;
+            }
+        }
+        return haspath;
+    }
+}
+```
+
+------
+
 ### 题目13：机器人的运动范围
 
 - **题目描述**
@@ -16,9 +73,9 @@ categories:
 
 - **分析**
 
-该类问题可以用回溯法来求解，回溯法非常适合由多个步骤组成的问题，并且每个步骤都有多个选项。当我们在某一步选择了其中一个选项时，我们进入下一步，然后又面临新的选项。重复直至到达最终的状态。
+回溯法求解，该题过程主要如下：
 
-该题过程并不复杂。用count表示机器人能到达的格子的个数，机器人一开始从（0,0）开始移动，当它准备进入（i，j）时，首先检查是否能到达，如果能到达，count+1。再判断（i，j）周围相邻的格子（需要注意边界上的格子没有4个相邻格子）是否能够到达。使用一个数组来标记格子是否已达，避免重复累加。同时，定义函数返回某一格是否可达，这个函数主要是判断格子是否满足相应的约束条件。
+用count表示机器人能到达的格子的个数，机器人一开始从（0,0）开始移动，当它准备进入（i，j）时，首先检查是否能到达，如果能到达，count+1。再判断（i，j）周围相邻的格子（需要注意边界上的格子没有4个相邻格子）是否能够到达。使用一个数组来标记格子是否已达，避免重复累加。同时，定义函数返回某一格是否可达，这个函数主要是判断格子是否满足相应的约束条件。
 
 - **参考实现**
 
