@@ -8,6 +8,78 @@ categories:
 - 算法与数据结构
 ---
 
+### 题目12：矩阵中的路径二叉树中和为某一值的路径二叉搜索树的第k个结点
+
+- **题目描述**
+
+给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。
+
+- **分析**
+
+该类问题
+
+- **参考实现**
+
+```java
+public class Solution {
+    TreeNode KthNode(TreeNode pRoot, int k)
+    {
+        if(pRoot==null||k<=0)return null;
+        TreeNode res=null;
+        ArrayList<TreeNode> tmp=new ArrayList<>();
+        help(pRoot,tmp,k,res);
+        if(tmp.size()<k)return null;
+        return tmp.get(k-1);
+    }
+    public void help(TreeNode root,ArrayList<TreeNode> tmp,int k,TreeNode res){
+        if(root==null||tmp.size()>=k)return;
+        if(root.left!=null)help(root.left,tmp,k,res);
+        tmp.add(root);
+        if(root.right!=null)help(root.right,tmp,k,res);
+        return;
+    }
+}
+```
+
+------
+
+### 题目12：矩阵中的路径二叉树中和为某一值的路径
+
+- **题目描述**
+
+输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)
+
+- **分析**
+
+该类问题
+
+- **参考实现**
+
+```java
+public class Solution {
+    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root,int target){
+        ArrayList<ArrayList<Integer>> res=new ArrayList<>();
+        if(root==null)return res;
+        ArrayList<Integer> path = new ArrayList<>();
+        FindPath(root,target,res,path);
+        return res;
+    }
+    public void FindPath(TreeNode root,int target,ArrayList<ArrayList<Integer>> res,ArrayList<Integer> path){
+        path.add(root.val);
+        if(root.left==null&&root.right==null&&root.val==target){
+            res.add(new ArrayList<Integer>(path));
+        }else{
+            if(root.left!=null)FindPath(root.left,target-root.val,res,path);
+            if(root.right!=null)FindPath(root.right,target-root.val,res,path);
+        }
+        path.remove(path.size()-1);
+        return;
+    }
+}
+```
+
+------
+
 ### 题目12：矩阵中的路径
 
 - **题目描述**

@@ -34,7 +34,13 @@ categories:
 
 ## 参数管理：rosparam
 
-## 文件系统导航：roscd
+## 文件系统：
+
+### roscd
+
+### rospack
+
+> rospack find <package> 查找包的路径
 
 ## 节点启动
 
