@@ -115,20 +115,20 @@
 
 
 
-  <meta name="description" content="主要介绍常用的七个性能指标: 速率比特(bit)是计算机中数据量的单位，也是信息论中使用的信息量的单位。英文单词bit来源于binary digit，意思是一个“二进制数字”。网络技术中的速率指的是连接在计算机网络上的主机在数字信道上传送数据的速率，它也称为数据率(data rate)或比特率(bit rate)。时间的基本单位是s(秒)，因此单位是bit/s(比特/秒，有时也写作bps，即bit">
-<meta name="keywords" content="计算机网络">
+  <meta name="description" content="主机和相关组件：roscoreroscore是一个向节点提供连接信息，以便节点间可以相互传递信息的服务程序。同时，它也提供了一个被节点广泛用于程序配置的参数服务器（参数服务器允许节点存储和获取任意数据结构，有命令rosparam用于交互）。它主要作用在于：  每个节点都在启动时连接到roscore并注册该节点发布和订阅的消息 roscore向新节点提供与其他发布并订阅相同消息主题的节点建立点对点连">
+<meta name="keywords" content="ROS,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络的性能">
-<meta property="og:url" content="http://liutaiyu.cn/2019/02/22/计算机网络的性能/index.html">
+<meta property="og:title" content="ROS常用命令记录">
+<meta property="og:url" content="http://liutaiyu.cn/2019/04/17/ROS常用命令记录/index.html">
 <meta property="og:site_name" content="Heitu的博客">
-<meta property="og:description" content="主要介绍常用的七个性能指标: 速率比特(bit)是计算机中数据量的单位，也是信息论中使用的信息量的单位。英文单词bit来源于binary digit，意思是一个“二进制数字”。网络技术中的速率指的是连接在计算机网络上的主机在数字信道上传送数据的速率，它也称为数据率(data rate)或比特率(bit rate)。时间的基本单位是s(秒)，因此单位是bit/s(比特/秒，有时也写作bps，即bit">
+<meta property="og:description" content="主机和相关组件：roscoreroscore是一个向节点提供连接信息，以便节点间可以相互传递信息的服务程序。同时，它也提供了一个被节点广泛用于程序配置的参数服务器（参数服务器允许节点存储和获取任意数据结构，有命令rosparam用于交互）。它主要作用在于：  每个节点都在启动时连接到roscore并注册该节点发布和订阅的消息 roscore向新节点提供与其他发布并订阅相同消息主题的节点建立点对点连">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://o9zqaq.ch.files.1drv.com/y4mjZRdZUMMm4JDkX4UaejxiStQ9acRYtOaOmPO1JjLPj-BZJ-rwKY9HkNTP3EI5vit2Rdod1POexWkevjduoXcXF6MrzLsPwmUvF1jWxv6g8R4Zt2rOrKzehAKIOKmbgmCwlfPrtPL6JnsxnlXvCBWd9A3JC_95-MSixJqP7rd9OiHTSlkndTeHF2LZ5Y7tpwPRdC6AEWuPMRmbchV3vhpFA?width=368&height=267&cropmode=none">
-<meta property="og:updated_time" content="2019-04-15T07:41:02.329Z">
+<meta property="og:image" content="https://charlyhuangrostutorial.files.wordpress.com/2016/09/a.png?w=599&h=340">
+<meta property="og:updated_time" content="2019-04-20T06:47:45.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络的性能">
-<meta name="twitter:description" content="主要介绍常用的七个性能指标: 速率比特(bit)是计算机中数据量的单位，也是信息论中使用的信息量的单位。英文单词bit来源于binary digit，意思是一个“二进制数字”。网络技术中的速率指的是连接在计算机网络上的主机在数字信道上传送数据的速率，它也称为数据率(data rate)或比特率(bit rate)。时间的基本单位是s(秒)，因此单位是bit/s(比特/秒，有时也写作bps，即bit">
-<meta name="twitter:image" content="https://o9zqaq.ch.files.1drv.com/y4mjZRdZUMMm4JDkX4UaejxiStQ9acRYtOaOmPO1JjLPj-BZJ-rwKY9HkNTP3EI5vit2Rdod1POexWkevjduoXcXF6MrzLsPwmUvF1jWxv6g8R4Zt2rOrKzehAKIOKmbgmCwlfPrtPL6JnsxnlXvCBWd9A3JC_95-MSixJqP7rd9OiHTSlkndTeHF2LZ5Y7tpwPRdC6AEWuPMRmbchV3vhpFA?width=368&height=267&cropmode=none">
+<meta name="twitter:title" content="ROS常用命令记录">
+<meta name="twitter:description" content="主机和相关组件：roscoreroscore是一个向节点提供连接信息，以便节点间可以相互传递信息的服务程序。同时，它也提供了一个被节点广泛用于程序配置的参数服务器（参数服务器允许节点存储和获取任意数据结构，有命令rosparam用于交互）。它主要作用在于：  每个节点都在启动时连接到roscore并注册该节点发布和订阅的消息 roscore向新节点提供与其他发布并订阅相同消息主题的节点建立点对点连">
+<meta name="twitter:image" content="https://charlyhuangrostutorial.files.wordpress.com/2016/09/a.png?w=599&h=340">
 
 
 
@@ -137,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="http://liutaiyu.cn/2019/02/22/计算机网络的性能/">
+  <link rel="canonical" href="http://liutaiyu.cn/2019/04/17/ROS常用命令记录/">
 
 
 
@@ -147,7 +147,7 @@
   };
 </script>
 
-  <title>计算机网络的性能 | Heitu的博客</title>
+  <title>ROS常用命令记录 | Heitu的博客</title>
   
 
 
@@ -341,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liutaiyu.cn/2019/02/22/计算机网络的性能/">
+    <link itemprop="mainEntityOfPage" href="http://liutaiyu.cn/2019/04/17/ROS常用命令记录/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Heitu">
@@ -358,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">计算机网络的性能
+          <h1 class="post-title" itemprop="name headline">ROS常用命令记录
               
             
           </h1>
@@ -383,7 +383,7 @@
                 
               
 
-              <time title="创建时间：2019-02-22 10:21:47" itemprop="dateCreated datePublished" datetime="2019-02-22T10:21:47+08:00">2019-02-22</time>
+              <time title="创建时间：2019-04-17 16:02:41" itemprop="dateCreated datePublished" datetime="2019-04-17T16:02:41+08:00">2019-04-17</time>
             
 
             
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-15 15:41:02" itemprop="dateModified" datetime="2019-04-15T15:41:02+08:00">2019-04-15</time>
+                <time title="修改时间：2019-04-20 14:47:45" itemprop="dateModified" datetime="2019-04-20T14:47:45+08:00">2019-04-20</time>
               
             
           </span>
@@ -424,7 +424,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/学习/计算机基础/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/学习/ROS/" itemprop="url" rel="index"><span itemprop="name">ROS</span></a></span>
 
                 
                 
@@ -438,7 +438,7 @@
 
           
           
-             <span id="/2019/02/22/计算机网络的性能/" class="leancloud_visitors" data-flag-title="计算机网络的性能">
+             <span id="/2019/04/17/ROS常用命令记录/" class="leancloud_visitors" data-flag-title="ROS常用命令记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -464,7 +464,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                <span title="本文字数">2.2k</span>
+                <span title="本文字数">924</span>
               
 
               
@@ -476,7 +476,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -496,51 +496,29 @@
       
 
       
-        <p><strong>主要介绍常用的七个性能指标:</strong></p>
-<h4 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h4><p>比特(bit)是计算机中数据量的单位，也是信息论中使用的信息量的单位。英文单词bit来源于binary digit，意思是一个“二进制数字”。网络技术中的速率指的是连接在计算机网络上的主机在数字信道上传送数据的速率，它也称为数据率(data rate)或比特率(bit rate)。时间的基本单位是s(秒)，因此单位是bit/s(比特/秒，有时也写作bps，即bit per second)。（1Gbit/s = 10^3Mbit/s = 10^6Kbit/s = 10^9bit/s）。</p>
-<p><em>注意：在通信领域和计算机领域，应特别注意数量单位“千”、“兆”、“吉”等的英文缩写所代表的数值。计算机中的数量单位用字节作为度量单位，“千字节”的“千”用大写K表示，它等于2^10，即1024，而不是1000。</em></p>
-<h4 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h4><h5 id="“带宽”有两种不同的意义："><a href="#“带宽”有两种不同的意义：" class="headerlink" title="“带宽”有两种不同的意义："></a>“带宽”有两种不同的意义：</h5><ol>
-<li>带宽本来是指某个信号具有的频带宽度。信号的带宽是指该信号所包含的各种不同频率成份所占据的频率范围。这种意义的带宽的单位是赫。因此，表示通信线路允许通过的信号频带范围就称为线路的带宽(或通频带)。</li>
-<li>在计算机网络中，带宽用来表示网络的通信线路传送数据的能力，因此网络带宽表示单位时间内从网络中的某一点到另一点所能通过的“最高数据率”。这种意义的带宽的单位是比特/秒。</li>
-</ol>
-<p>   在“带宽”的两种表述中，前者为频域称谓，而后者为时域称谓，其本质是相同的。也就是说，一条通信链路的“带宽”越宽，其所能传输的“最高数据率”也越高。</p>
-<p>   <em>注意：宽带运行商和电脑对宽带的速度单位是不一样的，电脑的单位是KBbs，而宽带运营商的单位是Kbbs，1B = 8b。例如你从宽带运营商那里办理了10M的宽带。  10Mbps = 10240Kbps / 8 = 1280KBps.</em></p>
-<h5 id="上行带宽和下行带宽，或者说上行速度和下行速度是什么意思"><a href="#上行带宽和下行带宽，或者说上行速度和下行速度是什么意思" class="headerlink" title="上行带宽和下行带宽，或者说上行速度和下行速度是什么意思?"></a>上行带宽和下行带宽，或者说上行速度和下行速度是什么意思?</h5><p>   我们访问互联网的过程中存在这两种行为：一是上传数据，二是下载数据。上行宽带(速度)指的是上传的速度，而下行宽带(速度)指的是下载数据是的数度。</p>
-<p>  上行宽带(速度)和下行宽带(速度)是不对称的，一般是下行速度大于上行的速度。我们平时所使用的宽带说多少M，都是指的下行宽带，因为我们上网主要是从互联网上下载数据，而上传的数据量要少很多。</p>
-<h4 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h4><p>   吞吐量(throughput)表示在单位时间内通过某个网络（或信道、接口）的数据量。吞吐量受网络带宽或网络的额定速率的限制。吞吐量更经常的用于对现实世界中的网络的一种测量，以便知道实际上到底有多少数据量能够通过网络。</p>
-<h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4><p>   时延(delay 或 latency)是指数据（一个报文或分组，甚至比特）从网络（或链路）的一端传送到另一端所需的时间。时延是个很重要的性能指标。网络中的时延由以下几个不同的部分组成：</p>
+        <h2 id="主机和相关组件：roscore"><a href="#主机和相关组件：roscore" class="headerlink" title="主机和相关组件：roscore"></a>主机和相关组件：roscore</h2><p><strong>roscore</strong>是一个<strong>向节点提供连接信息</strong>，以便节点间可以相互传递信息的<strong>服务程序</strong>。同时，它也提供了一个被节点广泛用于程序配置的<strong>参数服务器</strong>（参数服务器允许节点存储和获取任意数据结构，有命令rosparam用于交互）。它主要作用在于：</p>
+<ul>
+<li>每个节点都在启动时连接到roscore并<strong>注册</strong>该节点发布和订阅的消息</li>
+<li>roscore向新节点提供与其他<strong>发布并订阅相同消息主题的节点</strong>建立<strong>点对点连接</strong>的必要信息</li>
+<li><strong>每一个ROS都需要roscore</strong>，否则节点之间无法互相找到</li>
+</ul>
+<p>当ROS启动时，我们会首先执行roscore，该进程含有一个名为ROS_MASTER_URI的环境变量，这是一个格式为<a href="http://hostname:11311/的字符串，表示roscore有一个实例可以通过这个URI在网络中进行访问。而roscore实际上则启动了三个工具：" target="_blank" rel="noopener">http://hostname:11311/的字符串，表示roscore有一个实例可以通过这个URI在网络中进行访问。而roscore实际上则启动了三个工具：</a></p>
 <ol>
-<li><strong>发送时延</strong>：指主机或路由器发送数据帧所需要的时间，也就是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需要的时间。发生在机器内部的发生器中,与传输信道的长度没有任何关系。<blockquote>
-<p>发送时延计算公式：数据帧的长度(bits) / 发送速率(bits/s)</p>
-</blockquote>
-</li>
+<li>主机，处理系统中的各类名称管理。维护一个关于节点名称和网络地址的映射列表。</li>
+<li>参数服务器，管理系统中各参数设置的键值对数据</li>
+<li>rosout节点，收集其他各个节点的调试信息</li>
 </ol>
-<p>由此可见发送时延与发送的帧长成正比，与发送速率成反比。</p>
-<ol>
-<li><strong>传播时延</strong>：指电磁波在信道中传播一定距离需要花费的时间。</li>
-</ol>
-<blockquote>
-<p>传播时延计算公式：信道长度(m) / 电磁波在信道上的传播速率(m/s)</p>
-<p>电磁波在自由空间传播速率是光速：3.0×10^5km/s，铜线电缆中：2.3×10^5km/s，光纤中：2.0×10^5km/s。传播时延与信号的发送速率无关。信号传送的距离越远，传播时延就越大。    </p>
-<ol>
-<li><strong>处理时延</strong>：主机或路由器在收到分组时要花费一定的时间进行处理，例如分析分组的首部、从分组中提取数据部分、进行差错检验或查找适当的路由等等。</li>
-</ol>
+<p>已知roscore的网络位置后，节点在roscore完成注册（提供节点的网络地址）并请求roscore通过命名找到其他节点和数据流。</p>
+<ul>
+<li>节点告诉roscore该节点发布和订阅的消息信息</li>
+<li>roscore向节点提供相关消息的生产者和使用者的地址</li>
+</ul>
+<p><img src="https://charlyhuangrostutorial.files.wordpress.com/2016/09/a.png?w=599&amp;h=340" alt="roscore与其他节点短暂连接"></p>
+<p>上图中的节点周期性的调用roscore来确保相互之间能被找到，而交换点到点消息是两个节点直接完成的。</p>
+<h2 id="参数管理：rosparam"><a href="#参数管理：rosparam" class="headerlink" title="参数管理：rosparam"></a>参数管理：rosparam</h2><h2 id="文件系统："><a href="#文件系统：" class="headerlink" title="文件系统："></a>文件系统：</h2><h3 id="roscd"><a href="#roscd" class="headerlink" title="roscd"></a>roscd</h3><h3 id="rospack"><a href="#rospack" class="headerlink" title="rospack"></a>rospack</h3><blockquote>
+<p>rospack find <package> 查找包的路径</package></p>
 </blockquote>
-<ol>
-<li><strong>排队时延</strong>：分组在经过网络传输时，要经过许多路由器。但分组在进入路由器后要先在输入队列中排队等待处理。在路由器确定了转发接口后，还要在输出队列中排队等待转发。这就产生了排队时延。<blockquote>
-<p>总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延</p>
-</blockquote>
-</li>
-</ol>
-<p><em>注意：由于时延由以上四部分组成，所以不能笼统地认为：“数据的发送速率越高，传送得就越快”。同时需要特别注意一个错误观念：“在高速链路，比特应当跑得更快些”。这是不对的，因为对于高速网络链路，我们提高的仅仅是数据的发送速率，而不是比特在链路上的传播速率。提高数据的发送速率只是减少了数据的发送时延。而传播速率的单位是每秒传输多少公里，是指传输线路上比特的传播速率，通常是由线路决定而不变的。</em></p>
-<h4 id="时延带宽积"><a href="#时延带宽积" class="headerlink" title="时延带宽积"></a>时延带宽积</h4><blockquote>
-<p>时延带宽积 = 传播时延 × 带宽</p>
-</blockquote>
-<p>时延带宽积表示链路可容纳的比特数，因此，链路的时延带宽积又称为以比特为单位的链路长度。</p>
-<h4 id="往返时间RTT"><a href="#往返时间RTT" class="headerlink" title="往返时间RTT"></a>往返时间RTT</h4><p>  往返时间RTT，表示从发送方发送数据开始，到发送方收到来自接收方的确认（接收方收到数据后便立即发送确认），总共经历的时间。往返时间一般就会包括分组在网络中的各种时延。</p>
-<h4 id="利用率"><a href="#利用率" class="headerlink" title="利用率"></a>利用率</h4><p>利用率由信道利用率和网络利用率两种。信道利用率指出某信道有百分之几的时间是被利用的（有数据通过）。完全空闲的信道的利用率是零。网络的利用率则是全网络的信道利用率的加权平均值。信道利用率并非越高越好，这是因为，根据排队论的理论，当某信道的利用率增大时，该信道引起的时延也会迅速增加。信道或网络的利用率过高会产生非常大的时延。</p>
-<p><img src="https://o9zqaq.ch.files.1drv.com/y4mjZRdZUMMm4JDkX4UaejxiStQ9acRYtOaOmPO1JjLPj-BZJ-rwKY9HkNTP3EI5vit2Rdod1POexWkevjduoXcXF6MrzLsPwmUvF1jWxv6g8R4Zt2rOrKzehAKIOKmbgmCwlfPrtPL6JnsxnlXvCBWd9A3JC_95-MSixJqP7rd9OiHTSlkndTeHF2LZ5Y7tpwPRdC6AEWuPMRmbchV3vhpFA?width=368&amp;height=267&amp;cropmode=none" alt="时延与利用率的关系"></p>
-
+<h2 id="节点启动"><a href="#节点启动" class="headerlink" title="节点启动"></a>节点启动</h2><h3 id="单节点启动：rosrun"><a href="#单节点启动：rosrun" class="headerlink" title="单节点启动：rosrun"></a>单节点启动：rosrun</h3><h3 id="多节点启动：roslaunch"><a href="#多节点启动：roslaunch" class="headerlink" title="多节点启动：roslaunch"></a>多节点启动：roslaunch</h3><h2 id="多节点系统测试：rostest"><a href="#多节点系统测试：rostest" class="headerlink" title="多节点系统测试：rostest"></a>多节点系统测试：rostest</h2><h2 id="系统监控"><a href="#系统监控" class="headerlink" title="系统监控"></a>系统监控</h2><h3 id="节点监控：rosnode"><a href="#节点监控：rosnode" class="headerlink" title="节点监控：rosnode"></a>节点监控：rosnode</h3><h3 id="话题监控：rostopic"><a href="#话题监控：rostopic" class="headerlink" title="话题监控：rostopic"></a>话题监控：rostopic</h3><h3 id="服务监控：rosservice"><a href="#服务监控：rosservice" class="headerlink" title="服务监控：rosservice"></a>服务监控：rosservice</h3><h3 id="服务请求和响应类型：rossrv"><a href="#服务请求和响应类型：rossrv" class="headerlink" title="服务请求和响应类型：rossrv"></a>服务请求和响应类型：rossrv</h3><h2 id="日志消息"><a href="#日志消息" class="headerlink" title="日志消息"></a>日志消息</h2><h3 id="rosout和-rosout-agg"><a href="#rosout和-rosout-agg" class="headerlink" title="/rosout和/rosout_agg"></a>/rosout和/rosout_agg</h3><h2 id="数据记录和分析"><a href="#数据记录和分析" class="headerlink" title="数据记录和分析"></a>数据记录和分析</h2><h3 id="rosbag"><a href="#rosbag" class="headerlink" title="rosbag"></a>rosbag</h3><h3 id="rostopic-echo-b"><a href="#rostopic-echo-b" class="headerlink" title="rostopic echo -b"></a>rostopic echo -b</h3><h2 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a>可视化工具</h2><h3 id="日志消息：rqt-console"><a href="#日志消息：rqt-console" class="headerlink" title="日志消息：rqt_console"></a>日志消息：rqt_console</h3><h3 id="节点、话题和连接：rqt-graph"><a href="#节点、话题和连接：rqt-graph" class="headerlink" title="节点、话题和连接：rqt_graph"></a>节点、话题和连接：rqt_graph</h3><h3 id="数据图表：rqt-plot"><a href="#数据图表：rqt-plot" class="headerlink" title="数据图表：rqt_plot"></a>数据图表：rqt_plot</h3><h3 id="话题数据可视化：rqt-bag"><a href="#话题数据可视化：rqt-bag" class="headerlink" title="话题数据可视化：rqt_bag"></a>话题数据可视化：rqt_bag</h3><h3 id="仿真工具：rviz"><a href="#仿真工具：rviz" class="headerlink" title="仿真工具：rviz"></a>仿真工具：rviz</h3>
       
     </div>
 
@@ -595,7 +573,7 @@
     <strong>本文作者： </strong>Heitu</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liutaiyu.cn/2019/02/22/计算机网络的性能/" title="计算机网络的性能">http://liutaiyu.cn/2019/02/22/计算机网络的性能/</a>
+    <a href="http://liutaiyu.cn/2019/04/17/ROS常用命令记录/" title="ROS常用命令记录">http://liutaiyu.cn/2019/04/17/ROS常用命令记录/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -608,7 +586,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计算机网络/" rel="tag"><i class="fa fa-tag"></i> 计算机网络</a>
+            <a href="/tags/ROS/" rel="tag"><i class="fa fa-tag"></i> ROS</a>
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           
         </div>
       
@@ -621,8 +601,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/05/LeetCode148-排序链表/" rel="next" title="LeetCode148-排序链表">
-                <i class="fa fa-chevron-left"></i> LeetCode148-排序链表
+              <a href="/2019/04/15/决策树基础/" rel="next" title="决策树基础">
+                <i class="fa fa-chevron-left"></i> 决策树基础
               </a>
             
           </div>
@@ -630,10 +610,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/10/博客相关问题/" rel="prev" title="博客相关问题">
-                博客相关问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -828,7 +804,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#速率"><span class="nav-text">速率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带宽"><span class="nav-text">带宽</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#“带宽”有两种不同的意义："><span class="nav-text">“带宽”有两种不同的意义：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上行带宽和下行带宽，或者说上行速度和下行速度是什么意思"><span class="nav-text">上行带宽和下行带宽，或者说上行速度和下行速度是什么意思?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#吞吐量"><span class="nav-text">吞吐量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延"><span class="nav-text">时延</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延带宽积"><span class="nav-text">时延带宽积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#往返时间RTT"><span class="nav-text">往返时间RTT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用率"><span class="nav-text">利用率</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主机和相关组件：roscore"><span class="nav-text">主机和相关组件：roscore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数管理：rosparam"><span class="nav-text">参数管理：rosparam</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统："><span class="nav-text">文件系统：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#roscd"><span class="nav-text">roscd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rospack"><span class="nav-text">rospack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点启动"><span class="nav-text">节点启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单节点启动：rosrun"><span class="nav-text">单节点启动：rosrun</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多节点启动：roslaunch"><span class="nav-text">多节点启动：roslaunch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多节点系统测试：rostest"><span class="nav-text">多节点系统测试：rostest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统监控"><span class="nav-text">系统监控</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#节点监控：rosnode"><span class="nav-text">节点监控：rosnode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#话题监控：rostopic"><span class="nav-text">话题监控：rostopic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务监控：rosservice"><span class="nav-text">服务监控：rosservice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务请求和响应类型：rossrv"><span class="nav-text">服务请求和响应类型：rossrv</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志消息"><span class="nav-text">日志消息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rosout和-rosout-agg"><span class="nav-text">/rosout和/rosout_agg</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据记录和分析"><span class="nav-text">数据记录和分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rosbag"><span class="nav-text">rosbag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rostopic-echo-b"><span class="nav-text">rostopic echo -b</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化工具"><span class="nav-text">可视化工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志消息：rqt-console"><span class="nav-text">日志消息：rqt_console</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点、话题和连接：rqt-graph"><span class="nav-text">节点、话题和连接：rqt_graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据图表：rqt-plot"><span class="nav-text">数据图表：rqt_plot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#话题数据可视化：rqt-bag"><span class="nav-text">话题数据可视化：rqt_bag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仿真工具：rviz"><span class="nav-text">仿真工具：rviz</span></a></li></ol></li></ol></div>
             
 
           </div>
