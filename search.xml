@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python笔记]]></title>
+    <url>%2F2019%2F04%2F21%2FPython%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Python多元赋值python中有一种赋值机制即多元赋值，采用这种方式赋值时，等号两边的对象都是元组并且元组的小括号是可选的。通常形式为： x, y, z = 1, 2, ‘a string’ 等同于 (x, y, z) = (1, 2, ‘a string’) 这种赋值类型最经常用到的环境是变量交换，形如 x, y = y, x 这种交换方式无需中间变量即可交换两个变量的值。那么具体实现机制是怎样的呢？ 运行时，首先构造一个元组(y, x)，然后构造另一个元组(x, y)，接着用元组(y, x)赋值给(x, y)，元组赋值过程从左到右，依次进行。假如x=1,y=2，先令x=y,此时x=2,然后令y=x,y应该等于2？那么就不能实现变量交换了？对于这个问题，应该从元组的特性说起。 x, y, z = 1, 2, ‘a string’tuple = (x, y, z) 变量名x, y, z都是引用，内存开辟除了三个空间分别存储1, 2, ‘a string’，三个变量分别指向这三块地址。由这三个变量构造的元组tuple，它有三个元素，这三个元素并不是x,y,z这三个变量，而是这三个变量所指向的地址空间里的内容。如果此时再另x=4,此时在地址空间会另开辟出一块空间存储4，x进而指向这块空间，而元组内的三个值仍保持不变。所以对于 x, y = y, x 来说，首先由y,x所构成的元组(y,x)其实应该表示为(2,1),那么再从左到右赋值，就可以交换变量的值了。 对于此，LeetCode中有一道链表反转的题目，借助多元赋值可以使代码非常简洁。给出实现代码： 123456789101112# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def reverseList(self, head: ListNode) -&gt; ListNode: p, rev = head, None while p: rev, rev.next, p = p, rev, p.next return rev]]></content>
+      <categories>
+        <category>学习</category>
+        <category>计算机语言</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ROS常用命令记录]]></title>
     <url>%2F2019%2F04%2F17%2FROS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%2F</url>
     <content type="text"><![CDATA[主机和相关组件：roscoreroscore是一个向节点提供连接信息，以便节点间可以相互传递信息的服务程序。同时，它也提供了一个被节点广泛用于程序配置的参数服务器（参数服务器允许节点存储和获取任意数据结构，有命令rosparam用于交互）。它主要作用在于： 每个节点都在启动时连接到roscore并注册该节点发布和订阅的消息 roscore向新节点提供与其他发布并订阅相同消息主题的节点建立点对点连接的必要信息 每一个ROS都需要roscore，否则节点之间无法互相找到 当ROS启动时，我们会首先执行roscore，该进程含有一个名为ROS_MASTER_URI的环境变量，这是一个格式为http://hostname:11311/的字符串，表示roscore有一个实例可以通过这个URI在网络中进行访问。而roscore实际上则启动了三个工具： 主机，处理系统中的各类名称管理。维护一个关于节点名称和网络地址的映射列表。 参数服务器，管理系统中各参数设置的键值对数据 rosout节点，收集其他各个节点的调试信息 已知roscore的网络位置后，节点在roscore完成注册（提供节点的网络地址）并请求roscore通过命名找到其他节点和数据流。 节点告诉roscore该节点发布和订阅的消息信息 roscore向节点提供相关消息的生产者和使用者的地址 上图中的节点周期性的调用roscore来确保相互之间能被找到，而交换点到点消息是两个节点直接完成的。 参数管理：rosparam文件系统：roscdrospack rospack find 查找包的路径 节点启动单节点启动：rosrun多节点启动：roslaunch多节点系统测试：rostest系统监控节点监控：rosnode话题监控：rostopic服务监控：rosservice服务请求和响应类型：rossrv日志消息/rosout和/rosout_agg数据记录和分析rosbagrostopic echo -b可视化工具日志消息：rqt_console节点、话题和连接：rqt_graph数据图表：rqt_plot话题数据可视化：rqt_bag仿真工具：rviz]]></content>
