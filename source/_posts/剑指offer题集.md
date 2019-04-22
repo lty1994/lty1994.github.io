@@ -541,6 +541,51 @@ public class Solution {
 
 ------
 
+### 题目30：包含min函数的栈
+
+- **题目描述**
+
+定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+
+- **分析**
+
+题干中我们需要定义一个栈，并且实现得到栈中最小元素的函数，并要求时间复杂度为$$O(1)$$。常规思路就是从栈顶通过迭代器搜索栈中最小的元素，但是这样做不符合时间复杂度的要求。因为题干没有限制空间复杂度，所以我们可以建一个辅助栈，使得栈顶元素始终是栈的最小元素。当然还有一种方法是建立最小堆，但是最小堆建立的时间复杂度是$$O(\log N)$$，也不符合题干要求。
+
+- **参考实现**
+
+```java
+import java.util.Stack;
+
+public class Solution {
+    Stack<Integer> stack=new Stack<>();
+    Stack<Integer> min_stack=new Stack<>();
+    public void push(int node) {
+        stack.push(node);
+        if(min_stack.isEmpty()||min_stack.peek()>node){
+            min_stack.push(node);
+        }
+    }
+    
+    public void pop() {
+        if(stack.isEmpty())return;
+        else{
+            if(stack.peek()==min_stack.peek())min_stack.pop();
+            stack.pop();
+        }
+    }
+    
+    public int top() {
+        return stack.peek();
+    }
+    
+    public int min() {
+        return min_stack.peek();
+    }
+}
+```
+
+------
+
 ### 题目32：从上往下打印二叉树
 
 - **题目描述**
@@ -727,53 +772,7 @@ public class Solution {
 
 ------
 
-### 题目54：包含min函数的栈
-
-- **题目描述**
-
-定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
-
-- **分析**
-
-题干中我们需要定义一个栈，并且实现得到栈中最小元素的函数，并要求时间复杂度为$$O(1)$$。常规思路就是从栈顶通过迭代器搜索栈中最小的元素，但是这样做不符合时间复杂度的要求。因为题干没有限制空间复杂度，所以我们可以建一个辅助栈，使得栈顶元素始终是栈的最小元素。当然还有一种方法是建立最小堆，但是最小堆建立的时间复杂度是$$O(\log N)$$，也不符合题干要求。
-
-- **参考实现**
-
-```java
-import java.util.Stack;
-
-public class Solution {
-
-    Stack<Integer> stack=new Stack<>();
-    Stack<Integer> min_stack=new Stack<>();
-    public void push(int node) {
-        stack.push(node);
-        if(min_stack.isEmpty()||min_stack.peek()>node){
-            min_stack.push(node);
-        }
-    }
-    
-    public void pop() {
-        if(stack.isEmpty())return;
-        else{
-            if(stack.peek()==min_stack.peek())min_stack.pop();
-            stack.pop();
-        }
-    }
-    
-    public int top() {
-        return stack.peek();
-    }
-    
-    public int min() {
-        return min_stack.peek();
-    }
-}
-```
-
-------
-
-### 题目54：二叉树的深度
+### 题目55：二叉树的深度
 
 - **题目描述**
 
@@ -781,7 +780,7 @@ public class Solution {
 
 - **分析**
 
-该题与题34有一点相似，都是从根节点到叶节点进行遍历。所以该题也只能是前序遍历这个树，我们采用递归的方式实现。题目要求树的深度，定义一个全局变量表示当前树的最大深度，定义一个局部变量表示当前树的深度，递归之后返回树的最大深度即可。
+该题与题34有一点相似，都是从根节点到叶节点进行遍历。所以该题也只能是前序遍历这个树，我们采用递归的方式实现。题目要求树的深度，定义一个全局变量表示当前树的最大深度，定义一个局部变量表示当前树的深度，递归之后返回树的最大深度即可。下面给出两种解法：
 
 - **参考实现**
 
@@ -799,6 +798,7 @@ public class TreeNode {
 
 }
 */
+解法一：
 public class Solution {
     int depth=0;
     public int TreeDepth(TreeNode root) {
@@ -813,6 +813,45 @@ public class Solution {
             if(root.left!=null)TreeDepth(root.left,path);
             if(root.right!=null)TreeDepth(root.right,path);
         }
+    }
+}
+解法二：
+public class Solution {
+    public int TreeDepth(TreeNode root) {
+        if(root==null)return 0;
+        int left_depth=TreeDepth(root.left);
+        int right_depth=TreeDepth(root.right);
+        return left_depth>right_depth?left_depth+1:right_depth+1;
+    }
+}
+```
+
+#### 延伸题：平衡二叉树的判定
+
+- **题目描述**
+
+输入一棵二叉树，判断该二叉树是否是[平衡二叉树](<https://baike.baidu.com/item/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91>)。
+
+> 平衡二叉搜索树（Self-balancing binary search tree）又被称为AVL树（有别于AVL算法），且具有以下性质：它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。平衡二叉树的常用实现方法有[红黑树](https://baike.baidu.com/item/%E7%BA%A2%E9%BB%91%E6%A0%91/2413209)、[AVL](https://baike.baidu.com/item/AVL/7543015)、[替罪羊树](https://baike.baidu.com/item/%E6%9B%BF%E7%BD%AA%E7%BE%8A%E6%A0%91/13859070)、[Treap](https://baike.baidu.com/item/Treap)、[伸展树](https://baike.baidu.com/item/%E4%BC%B8%E5%B1%95%E6%A0%91/7003945)等。
+
+- **分析**
+
+该题最直接的做法，遍历每个结点，借助一个获取树深度的递归函数，根据该结点的左右子树高度差判断是否平衡，然后递归地对左右子树进行判断。但是这样会重复遍历节点，我们可以简化一下，在判断当前子树不是平衡二叉树之后我们就直接返回，可以借助一个标志（-1）。
+
+- **参考实现**
+
+```java
+public class Solution {
+    public boolean IsBalanced_Solution(TreeNode root) {
+        return getdepth(root)!=-1;
+    }
+    public int getdepth(TreeNode root){
+        if(root==null)return 0;
+        int left=getdepth(root.left);
+        if(left==-1)return -1;
+        int right=getdepth(root.right);
+        if(right==-1)return -1;
+        return Math.abs(left-right)>1?-1:1+Math.max(left,right);
     }
 }
 ```
