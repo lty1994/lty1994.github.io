@@ -725,4 +725,100 @@ public class Solution {
 }
 ```
 
+------
+
+### 题目54：包含min函数的栈
+
+- **题目描述**
+
+定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+
+- **分析**
+
+题干中我们需要定义一个栈，并且实现得到栈中最小元素的函数，并要求时间复杂度为$$O(1)$$。常规思路就是从栈顶通过迭代器搜索栈中最小的元素，但是这样做不符合时间复杂度的要求。因为题干没有限制空间复杂度，所以我们可以建一个辅助栈，使得栈顶元素始终是栈的最小元素。当然还有一种方法是建立最小堆，但是最小堆建立的时间复杂度是$$O(\log N)$$，也不符合题干要求。
+
+- **参考实现**
+
+```java
+import java.util.Stack;
+
+public class Solution {
+
+    Stack<Integer> stack=new Stack<>();
+    Stack<Integer> min_stack=new Stack<>();
+    public void push(int node) {
+        stack.push(node);
+        if(min_stack.isEmpty()||min_stack.peek()>node){
+            min_stack.push(node);
+        }
+    }
+    
+    public void pop() {
+        if(stack.isEmpty())return;
+        else{
+            if(stack.peek()==min_stack.peek())min_stack.pop();
+            stack.pop();
+        }
+    }
+    
+    public int top() {
+        return stack.peek();
+    }
+    
+    public int min() {
+        return min_stack.peek();
+    }
+}
+```
+
+------
+
+### 题目54：二叉树的深度
+
+- **题目描述**
+
+输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
+
+- **分析**
+
+该题与题34有一点相似，都是从根节点到叶节点进行遍历。所以该题也只能是前序遍历这个树，我们采用递归的方式实现。题目要求树的深度，定义一个全局变量表示当前树的最大深度，定义一个局部变量表示当前树的深度，递归之后返回树的最大深度即可。
+
+- **参考实现**
+
+```java
+/**
+public class TreeNode {
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
+
+    public TreeNode(int val) {
+        this.val = val;
+
+    }
+
+}
+*/
+public class Solution {
+    int depth=0;
+    public int TreeDepth(TreeNode root) {
+        int path=0;
+        TreeDepth(root,path);
+        return depth;
+    }
+    public void TreeDepth(TreeNode root,int path){
+        if(root==null)return;
+        else{
+            if(++path>depth)depth=path;
+            if(root.left!=null)TreeDepth(root.left,path);
+            if(root.right!=null)TreeDepth(root.right,path);
+        }
+    }
+}
+```
+
+------
+
+
+
 ### 未完待续...
