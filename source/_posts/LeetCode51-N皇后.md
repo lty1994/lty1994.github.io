@@ -3,7 +3,7 @@ title: LeetCode51-N皇后
 date: 2019-04-24 11:12:36
 tags:
 - 算法题目
-- Hard
+- LeetCode-hard
 categories:
 - 学习
 - 算法与数据结构
@@ -59,7 +59,7 @@ class Solution {
         }
     }
     public static void getsol(int n, int row, List<Integer> tmp) {
-        if(n==row){
+        if(n==row){\\如果遍历完所有行,则为一种解法
             List<String> path = new ArrayList<>();
             for (Integer i :
                     tmp) {
@@ -76,15 +76,15 @@ class Solution {
             res.add(path);
         }
         A:for (int i = 0; i < n; i++) {
-            if(!tmp.contains(i)){//如果该列没有冲突
-                for (int j = 0; j < row; j++) {
+            if(!tmp.contains(i)){//判断该列是否有皇后
+                for (int j = 0; j < row; j++) {//判断该点斜线上是否有皇后,如果有,则继续下一列
                     if(row-j==Math.abs(i-tmp.get(j))){
                         continue A;
                     }
                 }
                 tmp.add(i);
-                getsol(n, row + 1, tmp);
-                tmp.remove(tmp.size() - 1);
+                getsol(n, row + 1, tmp);//查找下一行皇后的位置
+                tmp.remove(tmp.size() - 1);//下一行所有列都无法放置,则回溯,进入当前行下一列
             }
         }
     }
