@@ -16,13 +16,13 @@ categories:
 
 *n* 皇后问题研究的是如何将 *n* 个皇后放置在 *n*×*n* 的棋盘上，并且使皇后彼此之间不能相互攻击。这个问题的由来其实是[八皇后问题](https://zh.wikipedia.org/zh-hans/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98)，这个问题非常经典。
 
-![8皇后问题](<https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/12/8-queens.png>)
+![8皇后问题](https://odyc3g.ch.files.1drv.com/y4mQRaqVnNn-u0-EdEAPXFFzfKa0ni8fJOmRoG8BEptM7CvwDqnczU095pweUYBpTToAmEPhntHt9Oliq7Yv6ahJfl_X0hvTcEOudvmjINbbojrFHdEKfxJqYSyVMnQDGD_MpRdPADSrFz05iWq3SD4eXms83-hKGBh1UkWDHMqeX7Fe2k-V_aNbAsgBnLgVkXVxL33uQWJRdgqH-GQiBpHFw?width=258&height=276&cropmode=none)
 
 上图为 8 皇后问题的一种解法。
 
 给定一个整数 *n*，返回所有不同的 *n* 皇后问题的解决方案。每一种解法包含一个明确的 *n* 皇后问题的棋子放置方案，该方案中 `'Q'` 和 `'.'` 分别代表了皇后和空位。
 
-示例1:**
+### **示例**
 
 > 输入: 4
 > 输出: [

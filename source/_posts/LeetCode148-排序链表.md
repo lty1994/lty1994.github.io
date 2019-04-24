@@ -3,6 +3,7 @@ title: LeetCode148-排序链表
 date: 2018-11-05 17:03:36
 tags:
 - 算法题目
+- medium
 categories:
 - 学习
 - 算法与数据结构
@@ -10,6 +11,7 @@ categories:
 题目来源：[148. 排序链表](https://leetcode-cn.com/problems/sort-list/description/)
 **在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。**
 **示例1:**
+
 >输入: 4->2->1->3
   输出: 1->2->3->4
 
