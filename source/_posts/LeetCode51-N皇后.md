@@ -59,7 +59,7 @@ class Solution {
         }
     }
     public static void getsol(int n, int row, List<Integer> tmp) {
-        if(n==row){\\如果遍历完所有行,则为一种解法
+        if(n==row){//如果遍历完所有行,则为一种解法
             List<String> path = new ArrayList<>();
             for (Integer i :
                     tmp) {
