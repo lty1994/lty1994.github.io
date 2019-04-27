@@ -737,6 +737,88 @@ public class Solution {
 
 ------
 
+
+
+### 题目35：复杂链表的复制
+
+- **题目描述**
+
+输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
+
+![描述图片](https://n9yt3g.ch.files.1drv.com/y4mW7orgbSyJlxtRNz-FFO5f-V0CSQk92i7QIfagQVQzgffARbopHJnt-Uqa-bW2_w6We_QT9T98LGDqYX2e-vhHrkvLoHrUAr68wMz2dxllG0I0V01YHdLZMd6Q12mJGEpnIxseANKtWL5lGh9rFUzJWrZ4Pbsjr3xrmj45Lvgdc9PRk76Y5dc4dS9alM-vufhunZ1aj-qK989vhXMS8fA0w?width=1370&height=374&cropmode=none)
+
+- **分析**
+
+本题有两种思路，一种是在原来的链表每个节点后面都复制了一个同样的节点，再修改其指针，最后把偶数节点都抽出来，作为新的复杂链表。第二种实现比较简单，因为节点的结构相同，每一次复制的过程是一样的，所以我们可以用递归求下一个节点的复制。下图为第一种思路的示意图：
+
+![](https://n9yu3g.ch.files.1drv.com/y4mtsd2-rSnuyHDCWkRynhHs5EbbTN5JwQoc773dE7Q_2WmxUow_gELkRwNNUY4fsBY-FDVoJjSpsUyiiwhN-mIcvP7Fy9HjGgRqVnQJitdxJ6kzHX0f57jkxWVLan8enslYWx3sgemDFsoZLt_gzE1BoUKO4qaOB9gnG2qpjvI2MtpSJu7BX7Xgyx8JFPpeiYEUExceqLpfbPbmop3DD6iBA?width=1322&height=290&cropmode=none)
+
+- **参考实现**
+
+```java
+/*
+public class RandomListNode {
+    int label;
+    RandomListNode next = null;
+    RandomListNode random = null;
+
+    RandomListNode(int label) {
+        this.label = label;
+    }
+}
+*/
+public class Solution {
+    //思路一：
+	public RandomListNode Clone(RandomListNode pHead) {
+        if(pHead == null) {
+            return null;
+        }
+         
+        RandomListNode currentNode = pHead;
+        //1、复制每个结点，如复制结点A得到A1，将结点A1插到结点A后面；
+        while(currentNode != null){
+            RandomListNode cloneNode = new RandomListNode(currentNode.label);
+            RandomListNode nextNode = currentNode.next;
+            currentNode.next = cloneNode;
+            cloneNode.next = nextNode;
+            currentNode = nextNode;
+        }
+         
+        currentNode = pHead;
+        //2、重新遍历链表，复制老结点的随机指针给新结点，如A1.random = A.random.next;
+        while(currentNode != null) {
+            currentNode.next.random = currentNode.random==null?null:currentNode.random.next;
+            currentNode = currentNode.next.next;
+        }
+         
+        //3、拆分链表，将链表拆分为原链表和复制后的链表
+        currentNode = pHead;
+        RandomListNode pCloneHead = pHead.next;
+        while(currentNode != null) {
+            RandomListNode cloneNode = currentNode.next;
+            currentNode.next = cloneNode.next;
+            cloneNode.next = cloneNode.next==null?null:cloneNode.next.next;
+            currentNode = currentNode.next;
+        }
+         
+        return pCloneHead;
+    }
+    //思路二：
+    public RandomListNode Clone(RandomListNode pHead)
+    {
+        if(pHead==null)return null;
+        RandomListNode res=new RandomListNode(pHead.label);
+        if(pHead.random!=null){
+            res.random=new RandomListNode(pHead.random.label);
+        }
+        res.next=Clone(pHead.next);
+        return res;
+    }
+}
+```
+
+------
+
 ### 题目54：二叉搜索树的第K大节点
 
 - **题目描述**
