@@ -29,8 +29,10 @@
   
   
     
+      
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+    
+  <script src="true"></script>
   <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
@@ -343,7 +345,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Heitu">
-      <meta itemprop="description" content="IT菜鸟的的成长之路">
+      <meta itemprop="description" content="种一棵树最好的时间是十年前，而后是现在">
       <meta itemprop="image" content="/uploads/touxiang.png">
     </span>
 
@@ -424,6 +426,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/13/Hexo中使用Latex公式/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/04/13/Hexo中使用Latex公式/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -679,6 +691,9 @@ PMV =&[0.303*exp(-0.036M)+0.0275]*\{M-W-3.05*[5.733-\\
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -718,7 +733,7 @@ PMV =&[0.303*exp(-0.036M)+0.0275]*\{M-W-3.05*[5.733-\\
               <img class="site-author-image" itemprop="image" src="/uploads/touxiang.png" alt="Heitu">
             
               <p class="site-author-name" itemprop="name">Heitu</p>
-              <p class="site-description motion-element" itemprop="description">IT菜鸟的的成长之路</p>
+              <p class="site-description motion-element" itemprop="description">种一棵树最好的时间是十年前，而后是现在</p>
           </div>
 
           
@@ -728,7 +743,7 @@ PMV =&[0.303*exp(-0.036M)+0.0275]*\{M-W-3.05*[5.733-\\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1050,6 +1065,31 @@ PMV =&[0.303*exp(-0.036M)+0.0275]*\{M-W-3.05*[5.733-\\
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Lj5vRaR6xeBhLlUsJDkthDn9-gzGzoHsz',
+        appKey: 'WfLlUhIB3opsJ8TkawMCFTxy',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
 
 
 
@@ -1380,70 +1420,6 @@ PMV =&[0.303*exp(-0.036M)+0.0275]*\{M-W-3.05*[5.733-\\
 
 
   
-
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function ({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
-            
-            .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-            })
-          } else {
-            
-              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
-                .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(1);
-                })
-                .fail(function () {
-                  console.log('Failed to create');
-                });
-            
-          }
-        })
-      .fail(function ({ responseJSON }) {
-        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
-      });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "Lj5vRaR6xeBhLlUsJDkthDn9-gzGzoHsz")
-        .done(function ({ api_server }) {
-          var Counter = function (method, url, data) {
-            return $.ajax({
-              method: method,
-              url: `https://${api_server}/1.1${url}`,
-              headers: {
-                'X-LC-Id': "Lj5vRaR6xeBhLlUsJDkthDn9-gzGzoHsz",
-                'X-LC-Key': "WfLlUhIB3opsJ8TkawMCFTxy",
-                'Content-Type': 'application/json',
-              },
-              data: data,
-            });
-          };
-          
-          addCount(Counter);
-          
-        })
-    });
-  </script>
-
-
 
   
 
