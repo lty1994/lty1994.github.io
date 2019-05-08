@@ -14,7 +14,7 @@ categories:
 
 ### **题目描述**
 
-*n* 皇后问题研究的是如何将 *n* 个皇后放置在 *n*×*n* 的棋盘上，并且使皇后彼此之间不能相互攻击。这个问题的由来其实是[八皇后问题](https://zh.wikipedia.org/zh-hans/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98)，这个问题非常经典。
+*n* 皇后问题研究的是如何将 *n* 个皇后放置在 *n*×*n* 的棋盘上，并且使皇后彼此之间不能相互攻击，皇后移动的具体规则可以参考[八皇后问题](https://zh.wikipedia.org/zh-hans/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98)。
 
 ![8皇后问题](https://odyc3g.ch.files.1drv.com/y4mQRaqVnNn-u0-EdEAPXFFzfKa0ni8fJOmRoG8BEptM7CvwDqnczU095pweUYBpTToAmEPhntHt9Oliq7Yv6ahJfl_X0hvTcEOudvmjINbbojrFHdEKfxJqYSyVMnQDGD_MpRdPADSrFz05iWq3SD4eXms83-hKGBh1UkWDHMqeX7Fe2k-V_aNbAsgBnLgVkXVxL33uQWJRdgqH-GQiBpHFw?width=258&height=276&cropmode=none)
 
