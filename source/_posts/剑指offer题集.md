@@ -280,6 +280,71 @@ public class Solution {
 
 ------
 
+### 题目23：链表中环的入口节点
+
+- **题目描述**
+
+给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+
+- **分析**
+
+本题主要考察的是指针的操作以及快慢指针的应用。题干中，我们首先需要判断链表是否有环，然后求得环的长度，最后借鉴题22的思路找到环的起始节点。时间复杂度为$$O(n)$$
+
+- **参考实现**
+
+```java
+/*
+ public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+*/
+public class Solution {
+    public ListNode EntryNodeOfLoop(ListNode pHead)
+    {
+        if(pHead==null)return null;
+        ListNode p1=pHead;
+        ListNode p2=pHead;
+        while(p2!=null){//判断是否有环
+            p1=p1.next;
+            if(p2.next!=null){
+                p2=p2.next.next;
+            }
+            else{
+                return null;
+            }
+            if(p1==p2)break;
+        }
+        int count=1;
+        while(true){//求环的长度
+            p1=p1.next;
+            if(p2!=p1){
+                count++;
+            }
+            else{
+                break;
+            }
+        }
+        p1=pHead;
+        //使用指针找到环的入口节点
+        while(count-->0){
+            pHead=pHead.next;
+        }
+        while(pHead!=p1){
+            p1=p1.next;
+            pHead=pHead.next;
+        }
+        return p1;
+    }
+}
+```
+
+------
+
 ### 题目24：反转链表
 
 - **题目描述**
