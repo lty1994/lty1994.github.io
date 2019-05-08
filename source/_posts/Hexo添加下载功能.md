@@ -1,5 +1,5 @@
 ---
-title: Hexo添加下载功能
+title: Hexo添加各种功能
 date: 2019-04-28 13:51:41
 tags:
 - 博客
@@ -7,7 +7,7 @@ categories:
 - 工作
 ---
 
-### 引言
+## 下载功能
 
 在博客书写过程中，我们往往会在文末提供附件。在网上搜索了一下方法，主要是通过网盘，上传文件，然后分享链接下载。通过网盘的方式可能还需要你注册网盘等等，操作有时候很麻烦。这里记录一个比较简洁的办法
 
@@ -27,3 +27,14 @@ categories:
 [hexo添加下载功能](<http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/>)
 
 [Hexo中提供文件下载功能](https://jingyan.baidu.com/article/fec4bce296d834f2608d8b5b.html)
+
+## 添加视频和GIF图片
+
+```html
+<iframe height=100 width=100 src="视频地址">
+{% iframe gif地址 %}
+```
+
+例如:
+
+{% iframe /iframe/cnn/卷积过程.gif %}
