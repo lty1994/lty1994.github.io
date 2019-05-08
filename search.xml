@@ -14,9 +14,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo添加下载功能]]></title>
+    <title><![CDATA[Hexo添加各种功能]]></title>
     <url>%2F2019%2F04%2F28%2FHexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[引言在博客书写过程中，我们往往会在文末提供附件。在网上搜索了一下方法，主要是通过网盘，上传文件，然后分享链接下载。通过网盘的方式可能还需要你注册网盘等等，操作有时候很麻烦。这里记录一个比较简洁的办法 方法 在source目录下新建dounload文件夹，将需要上传的文件xx.xx复制到该目录。 在_posts博文中，插入： [ 点击下载](/download/xx.xls”)链接 示例这里放了大湾区规划纲要：粤港澳大湾区发展规划纲要.pdf 参考链接hexo添加下载功能 Hexo中提供文件下载功能]]></content>
+    <content type="text"><![CDATA[下载功能在博客书写过程中，我们往往会在文末提供附件。在网上搜索了一下方法，主要是通过网盘，上传文件，然后分享链接下载。通过网盘的方式可能还需要你注册网盘等等，操作有时候很麻烦。这里记录一个比较简洁的办法 方法 在source目录下新建dounload文件夹，将需要上传的文件xx.xx复制到该目录。 在_posts博文中，插入： [ 点击下载](/download/xx.xls”)链接 示例这里放了大湾区规划纲要：粤港澳大湾区发展规划纲要.pdf 参考链接hexo添加下载功能 Hexo中提供文件下载功能 添加视频和GIF图片12&lt;iframe height=100 width=100 src="视频地址"&gt;&lt;iframe height=100 width=100 src="gif 图片地址"&gt; 例如:]]></content>
       <categories>
         <category>工作</category>
       </categories>
